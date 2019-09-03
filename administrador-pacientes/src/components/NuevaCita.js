@@ -26,6 +26,55 @@ class NuevaCita extends Component {
                                 />
                             </div>
                         </div>
+                        <div className="row form-group">
+                            <label className="col-sm-4 col-lg-2 col-form-label">
+                                Nombre Dueño
+                            </label>
+                            <div className="col-sm-8 col-lg-10">
+                                <input
+                                     type="text"
+                                     className="form-control"
+                                     placeholder="Nombre Dueño"
+                                     name="propietario"
+                                />
+                            </div>
+                        </div>
+                        <div className="row form-group">
+                            <label className="col-sm-4 col-lg-2 col-form-label">
+                                Fecha
+                            </label>
+                            <div className="col-sm-8 col-lg-10">
+                                <input
+                                     type="date"
+                                     className="form-control"
+                                     name="fecha"
+                                />
+                            </div>
+                        </div>
+                        <div className="row form-group">
+                            <label className="col-sm-4 col-lg-2 col-form-label">
+                                Hora
+                            </label>
+                            <div className="col-sm-8 col-lg-10">
+                                <input
+                                     type="time"
+                                     className="form-control"
+                                     name="hora"
+                                />
+                            </div>
+                        </div>
+                        <div className="row form-group">
+                            <label className="col-sm-4 col-lg-2 col-form-label">
+                                Sintomas
+                            </label>
+                            <div className="col-sm-8 col-lg-10">
+                                <textarea
+                                    type="text"
+                                    className="form-control"
+                                    name="sintomas">
+                                </textarea>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
