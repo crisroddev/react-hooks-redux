@@ -1,7 +1,7 @@
 import React from 'react';
 import Cita from './Cita';
 
-const ListaCitas = ({citas}) => {
+const ListaCitas = ({citas, eliminarCita}) => {
     return ( 
         <div className="card mt-2 py-5">
             <div className="card-body">
