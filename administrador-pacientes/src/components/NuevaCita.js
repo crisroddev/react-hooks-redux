@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
 
+const initialState = {
+    cita: {
+        mascota: '',
+        propietario: '',
+        fecha: '',
+        hora: '',
+        sintomas: ''
+    }
+}
+
 class NuevaCita extends Component {
     state = { 
-        cita: {
-            mascota: '',
-            propietario: '',
-            fecha: '',
-            hora: '',
-            sintomas: ''
-        }
+       ...initialState
      }
 
      handleChange = e => {
@@ -40,6 +44,11 @@ class NuevaCita extends Component {
 
         // Agregar Cita Al State de App
         this.props.crearNuevaCita(nuevaCita)
+
+        // Reinicio State
+        this.setState({
+            ...initialState
+        })
      }
     
 
