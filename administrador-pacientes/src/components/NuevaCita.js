@@ -75,6 +75,7 @@ class NuevaCita extends Component {
                                 </textarea>
                             </div>
                         </div>
+                        <input type="submit" className="py-3 btn btn-success btn-block" value="Agregar Nueva Cita"/>
                     </form>
                 </div>
 
