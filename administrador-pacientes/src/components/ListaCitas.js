@@ -1,8 +1,19 @@
 import React from 'react'
 
-const ListaCitas = () => {
+const ListaCitas = ({citas}) => {
     return ( 
-        <h1>Desde Lista Citas</h1>
+        <div className="card mt-2 py-5">
+            <div className="card-body">
+                <h2 className="card-title text-center">
+                    Administra las Citas
+                </h2>
+                <div className="lista-citas">
+                    
+
+                </div>
+
+            </div>
+        </div>
      );
 }
  
