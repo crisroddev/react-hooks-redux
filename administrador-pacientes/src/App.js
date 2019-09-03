@@ -5,11 +5,17 @@ import NuevaCita from './components/NuevaCita';
 
 class App extends Component {
   state = { 
-
+    citas: []
    }
 
    crearNuevaCita = datos => {
-     console.log(datos)
+    //  Copiar State
+    const citas = [...this.state.citas]
+
+    // Agrego al State
+    this.setState({
+      citas
+    })
    }
 
   render() { 
