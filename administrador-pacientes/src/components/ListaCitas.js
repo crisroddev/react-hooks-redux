@@ -2,11 +2,15 @@ import React from 'react';
 import Cita from './Cita';
 
 const ListaCitas = ({citas, eliminarCita}) => {
+
+    // Imprimir mensaje si hay citas o no
+    const mensaje = Object.keys(citas).length === 0 ? 'No Hay Citas' : 'Administra las Citas Aqui'
+
     return ( 
         <div className="card mt-2 py-5">
             <div className="card-body">
                 <h2 className="card-title text-center">
-                    Administra las Citas
+                    {mensaje}
                 </h2>
                 <div className="lista-citas">
                     {citas.map(cita => (
