@@ -2,8 +2,24 @@ import React, { Component } from 'react'
 
 class NuevaCita extends Component {
     state = { 
-
+        cita: {
+            mascota: '',
+            propietario: '',
+            fecha: '',
+            hora: '',
+            sintomas: ''
+        }
      }
+
+     handleChange = e => {
+        e.preventDefault();
+        this.setState({
+            cita: {
+                [e.target.name]: e.target.value
+            }
+        })
+     }
+    
 
     render() { 
         return ( 
@@ -12,7 +28,8 @@ class NuevaCita extends Component {
                     <h2 className="card-title text-center mb-5">
                         Llena el Formulario para Nueva Cita
                     </h2>
-                    <form>
+                    <form
+                        onSubmit={handleSubmit}>
                         <div className="row form-group">
                             <label className="col-sm-4 col-lg-2 col-form-label">
                                 Nombre Mascota
@@ -23,6 +40,7 @@ class NuevaCita extends Component {
                                      className="form-control"
                                      placeholder="Nombre Mascota"
                                      name="mascota"
+                                     onChange={this.handleChange}
                                 />
                             </div>
                         </div>
