@@ -9,6 +9,16 @@ class App extends Component {
     citas: []
    }
 
+  //  Cuando App Carga
+   componentDidMount() {
+
+   }
+
+  //  Cuando App Actualiza
+  componentDidUpdate() {
+    localStorage.setItem('citas', JSON.stringify(this.state.citas))
+  }
+
    crearNuevaCita = datos => {
     //  Copiar State
     const citas = [...this.state.citas, datos]
