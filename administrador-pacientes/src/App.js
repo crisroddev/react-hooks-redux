@@ -21,7 +21,12 @@ class App extends Component {
 
   //  Elimina las citas
   eliminarCita = id => {
-    console.log(id);
+    // Tomo copia del State
+
+    // Filter para sacar la cita del elemento con su ID
+
+    // Actualizo state
+
   }
 
   render() { 
