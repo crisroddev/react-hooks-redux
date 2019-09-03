@@ -12,13 +12,28 @@ class NuevaCita extends Component {
      }
 
      handleChange = e => {
-        e.preventDefault();
         this.setState({
             cita: {
                 ...this.state.cita,
                 [e.target.name]: e.target.value
-            }
+            },
+            error: false
         })
+     }
+
+     handleSubmit = e => {
+        e.preventDefault();
+        // Extraer Valores State
+        const { mascota, propietario, fecha, hora, sintomas } = this.state.cita;
+        // Validar Campos
+        if(mascota === '' || propietario === '' || fecha === '' || hora === '' || sintomas === '') {
+            this.setState({
+                error: true
+            });
+            return;
+        }
+
+        // Agregar Cita Al State de App
      }
     
 
@@ -30,7 +45,7 @@ class NuevaCita extends Component {
                         Llena el Formulario para Nueva Cita
                     </h2>
                     <form
-                        >
+                        onSubmit={this.handleSubmit}>
                         <div className="row form-group">
                             <label className="col-sm-4 col-lg-2 col-form-label">
                                 Nombre Mascota
