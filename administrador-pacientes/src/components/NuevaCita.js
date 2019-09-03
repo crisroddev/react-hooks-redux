@@ -15,6 +15,7 @@ class NuevaCita extends Component {
         e.preventDefault();
         this.setState({
             cita: {
+                ...this.state.cita,
                 [e.target.name]: e.target.value
             }
         })
@@ -29,7 +30,7 @@ class NuevaCita extends Component {
                         Llena el Formulario para Nueva Cita
                     </h2>
                     <form
-                        onSubmit={handleSubmit}>
+                        >
                         <div className="row form-group">
                             <label className="col-sm-4 col-lg-2 col-form-label">
                                 Nombre Mascota
@@ -54,6 +55,7 @@ class NuevaCita extends Component {
                                      className="form-control"
                                      placeholder="Nombre Dueño"
                                      name="propietario"
+                                     onChange={this.handleChange}
                                 />
                             </div>
                         </div>
@@ -66,6 +68,7 @@ class NuevaCita extends Component {
                                      type="date"
                                      className="form-control"
                                      name="fecha"
+                                     onChange={this.handleChange}
                                 />
                             </div>
                         </div>
@@ -78,6 +81,7 @@ class NuevaCita extends Component {
                                      type="time"
                                      className="form-control"
                                      name="hora"
+                                     onChange={this.handleChange}
                                 />
                             </div>
                         </div>
@@ -89,7 +93,8 @@ class NuevaCita extends Component {
                                 <textarea
                                     type="text"
                                     className="form-control"
-                                    name="sintomas">
+                                    name="sintomas"
+                                    onChange={this.handleChange}>
                                 </textarea>
                             </div>
                         </div>
