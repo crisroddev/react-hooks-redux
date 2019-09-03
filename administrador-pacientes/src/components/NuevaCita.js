@@ -34,6 +34,7 @@ class NuevaCita extends Component {
         }
 
         // Agregar Cita Al State de App
+        this.props.crearNuevaCita(this.state.cita)
      }
     
 
