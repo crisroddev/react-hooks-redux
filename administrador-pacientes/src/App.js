@@ -22,10 +22,13 @@ class App extends Component {
   //  Elimina las citas
   eliminarCita = id => {
     // Tomo copia del State
-
+    const citasActuales = [...this.state.citas]
     // Filter para sacar la cita del elemento con su ID
-
+    const citas = citasActuales.filter(cita => cita.id !== id)
     // Actualizo state
+    this.setState({
+      citas
+    })
 
   }
 
