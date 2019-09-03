@@ -8,7 +8,9 @@ const ListaCitas = ({citas}) => {
                     Administra las Citas
                 </h2>
                 <div className="lista-citas">
-                    
+                    {citas.map(cita => (
+                        
+                    ))}
 
                 </div>
 
