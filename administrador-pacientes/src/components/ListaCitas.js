@@ -13,6 +13,7 @@ const ListaCitas = ({citas, eliminarCita}) => {
                         <Cita
                             key={cita.id}
                             cita={cita}
+                            eliminarCita={eliminarCita}
                         />
                     ))}
                 </div>
