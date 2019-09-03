@@ -42,6 +42,7 @@ class NuevaCita extends Component {
                                      placeholder="Nombre Mascota"
                                      name="mascota"
                                      onChange={this.handleChange}
+                                     value={this.state.cita.mascota}
                                 />
                             </div>
                         </div>
@@ -56,6 +57,7 @@ class NuevaCita extends Component {
                                      placeholder="Nombre Dueño"
                                      name="propietario"
                                      onChange={this.handleChange}
+                                     value={this.state.cita.propietario}
                                 />
                             </div>
                         </div>
@@ -69,6 +71,7 @@ class NuevaCita extends Component {
                                      className="form-control"
                                      name="fecha"
                                      onChange={this.handleChange}
+                                     value={this.state.cita.fecha}
                                 />
                             </div>
                         </div>
@@ -82,6 +85,7 @@ class NuevaCita extends Component {
                                      className="form-control"
                                      name="hora"
                                      onChange={this.handleChange}
+                                     value={this.state.cita.hora}
                                 />
                             </div>
                         </div>
@@ -94,7 +98,8 @@ class NuevaCita extends Component {
                                     type="text"
                                     className="form-control"
                                     name="sintomas"
-                                    onChange={this.handleChange}>
+                                    onChange={this.handleChange}
+                                    value={this.state.cita.sintomas}>
                                 </textarea>
                             </div>
                         </div>
