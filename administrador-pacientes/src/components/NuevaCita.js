@@ -44,12 +44,20 @@ class NuevaCita extends Component {
     
 
     render() { 
+        // Extraer Valor del state para mostrar erro
+        const { error } = this.state;
         return ( 
             <div className="card mt-5 py-5">
                 <div className="card-body">
                     <h2 className="card-title text-center mb-5">
                         Llena el Formulario para Nueva Cita
                     </h2>
+                    {error ? 
+                        <div className="alert alert-danger mt-2 mb-5 text-center">
+                            Todos los Campos son Obligatorios
+                        </div> : 
+                        null
+                    }
                     <form
                         onSubmit={this.handleSubmit}>
                         <div className="row form-group">
