@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Cita from './Cita';
 
 const ListaCitas = ({citas}) => {
     return ( 
@@ -9,7 +10,10 @@ const ListaCitas = ({citas}) => {
                 </h2>
                 <div className="lista-citas">
                     {citas.map(cita => (
-                        
+                        <Cita
+                            key={cita.id}
+                            cita={cita}
+                        />
                     ))}
 
                 </div>
