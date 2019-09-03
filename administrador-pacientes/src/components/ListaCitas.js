@@ -15,9 +15,7 @@ const ListaCitas = ({citas}) => {
                             cita={cita}
                         />
                     ))}
-
                 </div>
-
             </div>
         </div>
      );

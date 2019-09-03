@@ -11,7 +11,7 @@ class App extends Component {
 
    crearNuevaCita = datos => {
     //  Copiar State
-    const citas = [...this.state.citas]
+    const citas = [...this.state.citas, datos]
 
     // Agrego al State
     this.setState({
