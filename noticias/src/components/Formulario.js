@@ -10,9 +10,8 @@ class Formulario extends Component {
              categoria : e.target.value
          })
         //  Pasarlo a la pagina Principal
+        this.props.consultarNoticia(this.state.categoria)
      } 
-
-
     render() { 
         return ( 
            <div className="buscador row">
