@@ -28,6 +28,10 @@ class App extends Component {
           <Header
             titulo="Noticias React API"
           />
+
+          <div className="container white contenedor-noticias">
+
+          </div>
         </Fragment>
      );
   }
