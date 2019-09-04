@@ -39,6 +39,7 @@ class Formulario extends Component {
                             className="uk-select"
                             name="categoria"
                             onChange={this.handleOnChange}>
+                            <option value="">---Selecciona la Categoria---</option>
                             <CategoriasConsumer>
                                 {(value) => {
                                     return(
