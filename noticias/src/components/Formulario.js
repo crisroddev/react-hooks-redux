@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 
 class Formulario extends Component {
     state = { 
-        categoria: ''
+        categoria: 'general'
      }
 
      handleChange = e => {
          this.setState({
              categoria : e.target.value
          })
+        //  Pasarlo a la pagina Principal
      } 
 
 
@@ -20,7 +21,7 @@ class Formulario extends Component {
                         <h2>Encuentra Noticias por Categoria</h2>
                         <div className="input-field col s12 m8">
                             <select
-                                onChange={handleChange}>
+                                onChange={this.handleChange}>
                                 <option value="general">General</option>
                                 <option value="business">Negocios</option>
                                 <option value="entertainment">Entertainment</option>
