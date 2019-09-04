@@ -2,8 +2,16 @@ import React, { Component } from 'react'
 
 class Formulario extends Component {
     state = { 
-
+        categoria: ''
      }
+
+     handleChange = e => {
+         this.setState({
+             categoria : e.target.value
+         })
+     } 
+
+
     render() { 
         return ( 
            <div className="buscador row">
@@ -11,7 +19,8 @@ class Formulario extends Component {
                     <form>
                         <h2>Encuentra Noticias por Categoria</h2>
                         <div className="input-field col s12 m8">
-                            <select>
+                            <select
+                                onChange={handleChange}>
                                 <option value="general">General</option>
                                 <option value="business">Negocios</option>
                                 <option value="entertainment">Entertainment</option>
