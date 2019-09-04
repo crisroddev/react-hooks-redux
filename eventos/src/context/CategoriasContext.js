@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import axios from 'axios';
 
 // Crear Context
 const CategoriasContext = React.createContext();
@@ -13,8 +14,11 @@ class CategoriasProvider extends Component {
         this.obtenerCategorias();
     }
 
-    obtenerCategorias = () => {
-        
+    obtenerCategorias = async () => {
+        let url = `https://www.eventbriteapi.com/v3/categories/?token=${this.token}&locale=es_ES`
+        let categorias = await axios.get(url);        
+        console.log(categorias)
+
     }
 
 
