@@ -1,8 +1,10 @@
 import React from 'react';
 
-const ListaNoticias = () => (
+const ListaNoticias = ({noticias}) => (
     <div className="row">
-
+        {noticias.map(noticia => (
+            <Noticia/>
+        ))}
     </div>
 );
 
