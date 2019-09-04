@@ -31,6 +31,7 @@ class CategoriasProvider extends Component {
                 value={{
                     categorias: this.state.categorias
                 }}>
+                {this.props.children}
                 
             </CategoriasContext.Provider>
          );
