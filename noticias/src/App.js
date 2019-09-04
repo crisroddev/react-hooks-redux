@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import Header  from './components/Header';
 import ListaNoticias  from './components/ListaNoticias';
+import Formulario  from './components/Formulario';
 
 class App extends Component {
   state = { 
@@ -30,6 +31,7 @@ class App extends Component {
             titulo="Noticias React API"
           />
           <div className="container white contenedor-noticias">
+            <Formulario/>
             <ListaNoticias
               noticias={this.state.noticias}
             />
