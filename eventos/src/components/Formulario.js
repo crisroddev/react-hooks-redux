@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { CategoriasConsumer } from '../context/CategoriasContext';
 
 class Formulario extends Component {
     state = { 
