@@ -8,9 +8,11 @@ class Formulario extends Component {
      handleChange = e => {
          this.setState({
              categoria : e.target.value
+         },() => {
+            //  Pasarlo a la pagina Principal
+            this.props.consultarNoticias(this.state.categoria)
          })
-        //  Pasarlo a la pagina Principal
-        this.props.consultarNoticias(this.state.categoria)
+        
      } 
     render() { 
         return ( 
