@@ -10,7 +10,7 @@ class Formulario extends Component {
              categoria : e.target.value
          })
         //  Pasarlo a la pagina Principal
-        this.props.consultarNoticia(this.state.categoria)
+        this.props.consultarNoticias(this.state.categoria)
      } 
     render() { 
         return ( 
