@@ -8,6 +8,17 @@ class CategoriasProvider extends Component {
     token = 'PZHE6E254BGLDF6FCD';
 
     state = {  }
+
+    componentDidMount() {
+        this.obtenerCategorias();
+    }
+
+    obtenerCategorias = () => {
+        
+    }
+
+
+
     render() { 
         return (  );
     }
