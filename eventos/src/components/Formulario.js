@@ -30,7 +30,9 @@ class Formulario extends Component {
                             className="uk-select"
                             name="categoria">
                             <CategoriasConsumer>
-                                
+                                {(value) => {
+                                    console.log(value)
+                                }}
                             </CategoriasConsumer>
 
                         </select>
