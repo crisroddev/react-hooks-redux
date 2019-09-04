@@ -14,18 +14,18 @@ class EventosProvider extends Component {
      }
 
     obtenerEventos = async (busqueda) => {
-        let url = `https://www.eventbriteapi.com/v3/events/search/q=${busqueda.nombre}&categories=${busqueda.categoria}&sort_by=${this.ordenar}&token=${this.token}&locale=es_ES`
+        let url = `https://www.eventbriteapi.com/v3/events/search/?q=${busqueda.nombre}&categories=${busqueda.categoria}&sort_by=${this.ordenar}&token=${this.token}&locale=es_ES`
 
         // Consultar Api con la URL
         const eventos = await axios(url)
-        console.log(eventos)
+        console.log(eventos.data.events)
     }
     render() { 
         return (
             <EventosContext.Provider
                 value={{
                     eventos: this.state.eventos,
-                    obtenerEvenetos: this.obtenerEventos
+                    obtenerEventos: this.obtenerEventos
                 }}
             >
                 {this.props.children}
