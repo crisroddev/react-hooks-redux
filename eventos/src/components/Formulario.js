@@ -29,6 +29,9 @@ class Formulario extends Component {
                         <select
                             className="uk-select"
                             name="categoria">
+                            <CategoriasConsumer>
+                                
+                            </CategoriasConsumer>
 
                         </select>
                     </div>
