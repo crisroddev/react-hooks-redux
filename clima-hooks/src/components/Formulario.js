@@ -12,7 +12,10 @@ const Formulario = () => {
     
     const handleChange = e => {
         // Cambiar el State
-        
+        setBusqueda({
+            ...busqueda,
+            [e.target.name] : e.target.value
+        })
     }
 
     return ( 
