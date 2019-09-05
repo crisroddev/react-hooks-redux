@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './components/Header';
 import Formulario from './components/Formulario';
 
 function App() {
+
+  // State Principal
+  const [ ciudad, setCiudad ] = useState('');
+  const [ pais, setPais ] = useState('');
 
   const datosConsulta = datos => {
     console.log(datos)
