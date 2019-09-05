@@ -21,8 +21,16 @@ const Formulario = ({datosConsulta}) => {
         // console.log(busqueda)
     }
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        // Paso Hacia componente principal con el metodo y el hook
+        datosConsulta(busqueda);
+    }
+
     return ( 
-        <form>
+        <form
+            onSubmit={handleSubmit}
+        >
             <div className="input-field col s12">
                 <input
                     type="text"
