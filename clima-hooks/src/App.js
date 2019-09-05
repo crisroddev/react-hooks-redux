@@ -7,17 +7,19 @@ function App() {
   // State Principal
   const [ ciudad, setCiudad ] = useState('');
   const [ pais, setPais ] = useState('');
+  const [ error, setError ] = useState(false);
 
   const datosConsulta = datos => {
     // Validar ambos campos esten
     if(datos.ciudad === '' || datos.pais === '') {
-      // error
+      setError(true);
       return;
     }
 
     // Ciudad y Pais existen agregarlos al state
     setCiudad(datos.ciudad);
     setPais(datos.pais);
+    setError(false);
   }
 
 
