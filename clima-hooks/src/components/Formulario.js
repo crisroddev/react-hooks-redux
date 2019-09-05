@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
  
-const Formulario = () => {
+const Formulario = ({datosConsulta}) => {
 
     // State del Componente
     // Busqueda State
