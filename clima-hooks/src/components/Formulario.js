@@ -34,7 +34,7 @@ const Formulario = () => {
             </div>
             <div className="input-field col s12">
                 <input
-                    type="submir"
+                    type="submit"
                     className="waves-effect waves-light btn-large btn-block yellow accent-4"
                     value="Buscar Clima"
                 />
