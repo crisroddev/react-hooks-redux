@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react';
  
 const Formulario = () => {
 
+    // State del Componente
+    // Busqueda State
+    // setBusqueda es this.setState
+    const [busqueda, setBusqueda ] = useState({
+        ciudad: '',
+        pais: ''
+    })
+    
     const handleChange = e => {
         // Cambiar el State
+        
     }
 
     return ( 
