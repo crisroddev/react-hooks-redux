@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Header = () => {
+const Header = ({titulo}) => {
    return (
        <nav>
             <div className="nav-wrapper light-blue darken-2">
