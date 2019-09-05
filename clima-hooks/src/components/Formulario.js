@@ -15,7 +15,10 @@ const Formulario = () => {
         setBusqueda({
             ...busqueda,
             [e.target.name] : e.target.value
-        })
+        });
+
+        // // Console.log state
+        // console.log(busqueda)
     }
 
     return ( 
