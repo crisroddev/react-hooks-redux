@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Clima = () => {
+const Clima = ({resultado}) => {
+    console.log(resultado)
     return ( 
         <div className="card-panel white col s12">
             <div className="black-text">
