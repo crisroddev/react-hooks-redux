@@ -2,13 +2,15 @@ import React, { Fragment, useState } from 'react';
 
 const Formulario = ({crearCita}) => {
 
-    const [ cita, setCita ] = useState({
+    const stateInicial = {
         mascota: '',
         propietario: '',
         fecha: '',
         hora: '',
         sintomas: ''
-    });
+    }
+
+    const [ cita, setCita ] = useState(stateInicial);
 
     const handleChange = e => {
         setCita({
@@ -26,9 +28,7 @@ const Formulario = ({crearCita}) => {
         crearCita(cita)
 
         // Reiniciar State
-        setCita({
-            mascota: ''
-        })
+        setCita(stateInicial)
     }
 
     return (
