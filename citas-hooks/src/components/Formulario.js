@@ -12,6 +12,7 @@ const Formulario = () => {
 
     const handleChange = e => {
         setCita({
+            ...cita,
             [e.target.name] : e.target.value
 
         })
