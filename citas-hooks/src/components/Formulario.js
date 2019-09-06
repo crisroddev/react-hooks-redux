@@ -10,6 +10,14 @@ const Formulario = () => {
         sintomas: ''
     });
 
+    const handleChange = e => {
+        setCita({
+            [e.target.name] : e.target.value
+
+        })
+        
+    }
+
     return (
         <Fragment>
             <h2>Crear Cita</h2>
@@ -19,7 +27,8 @@ const Formulario = () => {
                         type="text" 
                         name="mascota"
                         className="u-full-width" 
-                        placeholder="Nombre Mascota" 
+                        placeholder="Nombre Mascota"
+                        onChange={handleChange}
                     />
                     <label>Nombre Dueño</label>
                     <input 
