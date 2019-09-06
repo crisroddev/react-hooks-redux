@@ -35,8 +35,6 @@ function App() {
     // Mostrar el Clima
     componente = null;
   }
-
-
   return (
     <div className="App">
       <Header
@@ -49,6 +47,9 @@ function App() {
             <Formulario
               datosConsulta={datosConsulta}
             />
+          </div>
+          <div className="col s12 m6">
+            {componente}
           </div>
         </div>
       </div>
