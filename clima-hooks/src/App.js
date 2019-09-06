@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 // Componentes
 import Header from './components/Header';
 import Formulario from './components/Formulario';
+import Error from './components/Error';
 
 function App() {
 
@@ -29,8 +30,10 @@ function App() {
   let componente;
   if(error) {
     // Hay error mostrar
+    componente = <Error mensaje="Ambos campos son obligatorios"/>
   } else {
     // Mostrar el Clima
+    componente = null;
   }
 
 
