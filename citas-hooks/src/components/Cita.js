@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cita = ({cita, index}) => {
+const Cita = ({cita, index, eliminarCita}) => {
     return ( 
         <div className="cita">
             <p>Mascota: <span>{cita.mascota}</span></p>

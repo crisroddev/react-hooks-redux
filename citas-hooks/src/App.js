@@ -15,6 +15,13 @@ function App() {
     setCita(nuevasCitas);
   }
 
+  // Elimina las Citas del State
+  const eliminarCita = index =>{
+    const nuevasCitas = [...citas];
+    nuevasCitas.splice(index, 1)
+    setCita(eliminarCita)
+  }
+
   return(
     <Fragment>
       <h1>Administrador de Pacientes</h1>
@@ -31,6 +38,7 @@ function App() {
                 key={index}
                 index={index}
                 cita={cita}
+                eliminarCita={eliminarCita}
               />
             ))}
           </div>
