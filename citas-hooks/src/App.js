@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      hola
-    </div>
-  );
+  // UseState
+  const [ citas, setCita ] = useState([]);
+  return(
+    <h1>Hola</h1>
+  )
+
 }
 
 export default App;
