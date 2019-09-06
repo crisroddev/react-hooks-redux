@@ -20,7 +20,9 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="one-half column">
-            <Formulario/>
+            <Formulario
+              crearCita={crearCita}
+            />
           </div>
           <div className="one-half column">
 
