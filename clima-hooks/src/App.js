@@ -50,6 +50,8 @@ function App() {
   if(error) {
     // Hay error mostrar
     componente = <Error mensaje="Ambos campos son obligatorios"/>
+  } else if (resultado.cod === '404') {
+    componente = <Error mensaje="La ciudad no existe en nuestro registro"/>
   } else {
     // Mostrar el Clima
     componente = <Clima
