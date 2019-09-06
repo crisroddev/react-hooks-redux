@@ -25,6 +25,16 @@ function App() {
     setError(false);
   }
 
+  const consultarAPI = async () => {
+    const appId = '2e6cd0675544648d55204e092f968d03';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appid}`;
+
+    // Consultar Url
+    const respuesta = await fetch(url);
+    const resultado = await respuesta.json();
+    console.log(resultado)
+  }
+
   // Cargar Componente Condicionalmente
 
   let componente;
