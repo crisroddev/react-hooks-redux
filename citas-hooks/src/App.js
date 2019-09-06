@@ -11,7 +11,7 @@ function App() {
   const crearCita = cita => {
     // Copiar state y agregar nuevo cliente
     const nuevasCitas = [...citas, cita];
-    console.log(nuevasCitas)
+    setCita(nuevasCitas);
   }
 
   return(
@@ -25,7 +25,13 @@ function App() {
             />
           </div>
           <div className="one-half column">
-
+            {citas.map((cita, index) => (
+              <Cita
+                key={index}
+                index={index}
+                cita={cita}
+              />
+            ))}
           </div>
         </div>
       </div>
