@@ -11,6 +11,7 @@ function App() {
   const [ ciudad, setCiudad ] = useState('');
   const [ pais, setPais ] = useState('');
   const [ error, setError ] = useState(false);
+  const [ resultado, setResultado ] = useState({});
 
   useEffect(() => {
     // Prevenir ejecución
@@ -23,7 +24,8 @@ function App() {
       // Consultar Url
       const respuesta = await fetch(url);
       const resultado = await respuesta.json();
-      console.log(resultado)
+      
+      setResultado(resultado);
     }
     consultarAPI();
   }, [ ciudad, pais ]);
