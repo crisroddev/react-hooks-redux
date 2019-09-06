@@ -2,6 +2,7 @@ import React, { useState, Fragment } from 'react';
 
 // Components
 import Formulario from './components/Formulario';
+import Cita from './components/Cita';
 
 function App() {
   // UseState
