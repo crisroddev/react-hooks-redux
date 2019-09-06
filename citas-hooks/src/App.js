@@ -6,6 +6,14 @@ import Formulario from './components/Formulario';
 function App() {
   // UseState
   const [ citas, setCita ] = useState([]);
+
+  // Agregar Nu evas Citas al state
+  const crearCita = cliente => {
+    // Copiar state y agregar nuevo cliente
+    const nuevasCitas = [...citas, cliente];
+    console.log(nuevasCitas)
+  }
+
   return(
     <Fragment>
       <h1>Administrador de Pacientes</h1>
