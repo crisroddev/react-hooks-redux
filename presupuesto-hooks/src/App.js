@@ -9,7 +9,9 @@ function App() {
       <header>
         <h1>Gasto Semanal</h1>
 
-        <Pregunta/>
+        <div className="contenido-principal contenido">
+          <Pregunta/>
+        </div>
       </header>
     </div>
   );
