@@ -6,16 +6,32 @@ const Pregunta = () => {
     const [ cantidad, setCantidad ] = useState(0);
     const [ error, setError ] = useState(false);
 
+    const handleChange =  e => {
+        setCantidad(parseInt(e.target.value, 10))
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        // Validar
+        if(cantidad < 1 || isNan(cantidad) ) {
+            setError(ture);
+            return;
+        }
+        // Si pasa La Validacion
+    }
 
     return ( 
         <Fragment>
             <h2>Coloca tu Presupuesto</h2>
-                <form>
+                <form
+                    onSubmit={handleSubmit}
+                >
                     <input
                         type="number"
                         className="u-full-width"
                         placeholder="Agrega Tu Presupuesto"
-                        onChange={e => setCantidad(parseInt(e.target.value, 10) ) }
+                        onChange={handleChange}
                     />
                     <input
                         type="submit"
