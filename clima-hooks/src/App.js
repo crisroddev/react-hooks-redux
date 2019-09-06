@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+
+// Componentes
 import Header from './components/Header';
 import Formulario from './components/Formulario';
 
@@ -20,6 +22,15 @@ function App() {
     setCiudad(datos.ciudad);
     setPais(datos.pais);
     setError(false);
+  }
+
+  // Cargar Componente Condicionalmente
+
+  let componente;
+  if(error) {
+    // Hay error mostrar
+  } else {
+    // Mostrar el Clima
   }
 
 
