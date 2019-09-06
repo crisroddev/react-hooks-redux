@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 
 // Componentes
 import Header from './components/Header';
@@ -11,6 +11,10 @@ function App() {
   const [ ciudad, setCiudad ] = useState('');
   const [ pais, setPais ] = useState('');
   const [ error, setError ] = useState(false);
+
+  useEffect(() => {
+    consultarAPI();
+  }, [ ciudad ]);
 
   const datosConsulta = datos => {
     // Validar ambos campos esten
