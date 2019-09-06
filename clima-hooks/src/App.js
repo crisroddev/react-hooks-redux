@@ -52,7 +52,9 @@ function App() {
     componente = <Error mensaje="Ambos campos son obligatorios"/>
   } else {
     // Mostrar el Clima
-    componente = <Clima/>;
+    componente = <Clima
+                    resultado={resultado}
+                  />;
   }
   return (
     <div className="App">
