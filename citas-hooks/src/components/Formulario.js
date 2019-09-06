@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 
-const Formulario = () => {
+const Formulario = ({crearCita}) => {
 
     const [ cita, setCita ] = useState({
         mascota: '',
@@ -19,10 +19,21 @@ const Formulario = () => {
         
     }
 
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        // Pasar la Cita al Componente Principal
+        crearCita(cita)
+
+        // Reiniciar State
+
+    }
+
     return (
         <Fragment>
             <h2>Crear Cita</h2>
-            <form>
+            <form
+                onSubmit={handleSubmit}>
                 <label>Nombre Mascota</label>
                     <input 
                         type="text" 

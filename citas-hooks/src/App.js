@@ -8,9 +8,9 @@ function App() {
   const [ citas, setCita ] = useState([]);
 
   // Agregar Nu evas Citas al state
-  const crearCita = cliente => {
+  const crearCita = cita => {
     // Copiar state y agregar nuevo cliente
-    const nuevasCitas = [...citas, cliente];
+    const nuevasCitas = [...citas, cita];
     console.log(nuevasCitas)
   }
 
