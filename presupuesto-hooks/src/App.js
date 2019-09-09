@@ -19,6 +19,11 @@ function App() {
       const listadoGastos = [...gastos, gasto];
       setGastos(listadoGastos);
 
+      // Restar Presupuesto
+      const presupuestoRestante = restante - gasto.cantidadGasto;
+      setRestante(presupuestoRestante)
+
+
       // Una vez que se agrega setPreguntaPresupuesto cambia a false
       setPreguntaPresupuesto(false);
     }
