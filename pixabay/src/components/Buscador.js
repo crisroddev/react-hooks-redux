@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Error from './Error';
 
 const Buscador = () => {
 
@@ -13,9 +14,8 @@ const Buscador = () => {
             setError(true);
             return;
         }
-
         // Enviar Termino a Componente Principal
-
+        setError(false);
     }
 
 
@@ -40,6 +40,10 @@ const Buscador = () => {
                     />
                 </div>
             </div>
+            { (error) ?
+                <Error mensaje="Debes ingresar un busqueda"/> :
+                null
+            }
         </form>
      );
 }
