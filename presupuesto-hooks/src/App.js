@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 // Components
 import Pregunta from './components/Pregunta';
 import Formulario from './components/Formulario';
+import Listado from './components/Listado';
 
 function App() {
   const [ presupuesto, setPresupuesto ] = useState(0);
