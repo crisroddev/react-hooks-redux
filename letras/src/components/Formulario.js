@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Formulario = () => {
+const Formulario = ({consultarAPILetra}) => {
 
     
     const [ busqueda, setBusqueda ] = useState({
@@ -16,11 +16,18 @@ const Formulario = () => {
         })
     }
 
+    // Cuando submit form 
+    const handleSubmit = e => {
+        e.preventdefault();
+        consultarAPILetra();
+    }
+
     return (
         <div className="bg-info">
           <div className="container">
               <div className="row">
                   <form 
+                    onSubmit={handleSubmit}
                     className="col card text-white bg-transparent  mb-5 pt-5 pb-2">
                       <fieldset>
                           <legend className="text-center">Buscador Letras Canciones</legend>
