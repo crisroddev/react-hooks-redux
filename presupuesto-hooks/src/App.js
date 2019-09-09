@@ -3,9 +3,10 @@ import React, {useState} from 'react';
 // Components
 import Pregunta from './components/Pregunta';
 
-const [ presupuesto, setPresupuesto ] = useState(0);
-
 function App() {
+  const [ presupuesto, setPresupuesto ] = useState(0);
+
+  
   return (
     <div className="App">
       <header>
