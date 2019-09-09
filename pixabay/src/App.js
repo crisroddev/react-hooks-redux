@@ -7,6 +7,10 @@ function App() {
   const [ busqueda, setBusqueda ] = useState('');
 
   useEffect(() => {
+
+    // No busque si no hago submit
+    if(busqueda === '') return;
+
     const consultarApi = async () => {
       const imagenesPorPagina = 30;
       const key = '13572348-e998cd81f08f11243f328ed57';
