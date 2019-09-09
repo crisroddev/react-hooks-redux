@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Frase from './components/Frase';
 
 function App() {
 
@@ -19,11 +20,17 @@ function App() {
       consultarApi()
     }, [])
 
-  console.log(frase)
-
-
   return(
-    <p>Hola</p>
+    <div className="contenedor">
+      <Frase
+        frase={frase}
+      />
+      <button
+        onClick={consultarApi}
+      >
+        Generar Nueva
+      </button>
+    </div>
   )
 }
 
