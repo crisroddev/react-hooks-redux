@@ -6,6 +6,7 @@ const ListadoImagenes = ({imagenes}) => {
         <div className="col-12 p-5 row">
             {imagenes.map(imagen => (
                 <Imagen
+                    id={imagen.id}
                     imagen={imagen}
                 />
             ))}
