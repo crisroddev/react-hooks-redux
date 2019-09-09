@@ -1,4 +1,5 @@
 import React from 'react';
+import Buscador from './components/Buscador';
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
         <p className="lead text-center">
             Buscador de Imagenes
         </p>
-
+        <Buscador/>
       </div>
       <div className="row justify-content-center">
       </div>
