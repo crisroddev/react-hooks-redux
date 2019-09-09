@@ -4,7 +4,7 @@ import shortid from 'shortid';
 
 const Formulario = (props) => {
 
-    const { setGasto } = props;
+    const { setGasto, setCrearGasto } = props;
 
     // State
     const [ nombreGasto, setNombreGasto ] = useState('');
