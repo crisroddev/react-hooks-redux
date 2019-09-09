@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 const Formulario = (props) => {
 
     // State
-    const [ nombreGasto, setNombreGasto ] = ('');
-    const [ cantidadGasto, setCantidadGasto ] = (0);
+    const [ nombreGasto, setNombreGasto ] = useState('');
+    const [ cantidadGasto, setCantidadGasto ] = useState(0);
     const [ error, setError ] = useState(false);
 
     return ( 
@@ -16,6 +16,7 @@ const Formulario = (props) => {
                     className="u-full-width"
                     type="text"
                     placeholder="Ej Transporte"
+                    onChange={e => setNombreGasto(e.target.value)}
                 />
             </div>
             <div className="campo">
@@ -24,6 +25,7 @@ const Formulario = (props) => {
                     className="u-full-width"
                     type="number"
                     placeholder="Ej 300"
+                    onChange={e => setCantidadGasto(e.target.value, 10)}
                 />
             </div>
             <input
