@@ -16,8 +16,11 @@ function App() {
     if(crearGasto) {
       const listadoGastos = [...gastos, gasto];
       setGastos(listadoGastos);
+
+      // Una vez que se agrega setPreguntaPresupuesto cambia a false
+      setPreguntaPresupuesto(false);
     }
-  },[]);
+  },[crearGasto]);
 
   return (
     <div className="App">
