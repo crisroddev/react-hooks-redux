@@ -7,9 +7,16 @@ function App() {
   const [ letra, setLetra ] = useState('');
   const [ info, setInfo ] = useState({});
 
+  // Metodo Consultar API letras
+  const consultarAPILetra = () => {
+
+  }
+
   return (
     <Fragment>
-      <Formulario/>
+      <Formulario
+        consultarAPILetra={consultarAPILetra}
+      />
     </Fragment>
   )
 }
