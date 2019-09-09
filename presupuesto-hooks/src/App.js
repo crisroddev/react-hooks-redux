@@ -13,8 +13,10 @@ function App() {
   const [ crearGasto, setCrearGasto ] = useState(false);
 
   useEffect(() => {
-    const listadoGastos = [...gastos, gasto];
-    setGastos(listadoGastos)
+    if(crearGasto) {
+      const listadoGastos = [...gastos, gasto];
+      setGastos(listadoGastos);
+    }
   },[]);
 
   return (

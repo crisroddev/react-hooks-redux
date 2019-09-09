@@ -29,6 +29,7 @@ const Formulario = (props) => {
         
         // Pasar Gasto al Componente Principal
         setGasto(gasto);
+        setCrearGasto(true);
         setError(false);
 
         // Reset form
