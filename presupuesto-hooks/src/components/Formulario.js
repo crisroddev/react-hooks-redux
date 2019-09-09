@@ -7,8 +7,23 @@ const Formulario = (props) => {
     const [ cantidadGasto, setCantidadGasto ] = useState(0);
     const [ error, setError ] = useState(false);
 
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        // Validar
+        if(cantidadGasto < 1 || isNaN(cantidadGasto) || nombreGasto === ('')) {
+            setError(true)
+            return;
+        }
+
+        // Pasar Gasto al Componente Principal
+
+    }
+
     return ( 
-        <form>
+        <form
+            onSubmit={handleSubmit}    
+        >
             <h2>Agrega Tus Gastos Aqui</h2>
             <div className="campo">
                 <label>Nombre del Gasto</label>
