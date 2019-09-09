@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 // Components
 import Pregunta from './components/Pregunta';
@@ -9,6 +9,11 @@ function App() {
   const [ preguntaPresupuesto, setPreguntaPresupuesto ] = useState(true);
   const [ gasto, setGasto ] = useState({});
   const [ gastos, setGastos ] = useState([]);
+
+  useEffect(() => {
+    const listadoGastos = [...gastos, gasto];
+    setGastos(listadoGastos)
+  },[]);
 
   return (
     <div className="App">
