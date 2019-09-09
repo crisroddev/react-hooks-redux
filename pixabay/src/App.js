@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Buscador from './components/Buscador';
+import ListadoImagenes from './components/ListadoImagenes';
 
 function App() {
 
@@ -38,6 +39,9 @@ function App() {
         />
       </div>
       <div className="row justify-content-center">
+        <ListadoImagenes
+          imagenes={imagenes}
+        />
       </div>
     </div>
   );
