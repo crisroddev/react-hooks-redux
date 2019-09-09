@@ -1,6 +1,21 @@
 import React, { useState } from 'react'
 
 const Formulario = () => {
+
+    
+    const [ busqueda, setBusqueda ] = useState({
+        artitsta: '',
+        cancion: ''
+    })
+
+    // Funcion Actualizar state de inputs
+    const actualizarState = e => {
+        setBusqueda({
+            ...busqueda,
+            [e.target.name] : e.target.value
+        })
+    }
+
     return (
         <div className="bg-info">
           <div className="container">
