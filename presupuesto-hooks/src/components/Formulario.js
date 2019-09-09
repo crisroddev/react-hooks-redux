@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Formulario = (props) => {
+
+    // State
+    const [ nombreGasto, setNombreGasto ] = ('');
+    const [ cantidadGasto, setCantidadGasto ] = (0);
+    const [ error, setError ] = useState(false);
+
     return ( 
         <form>
             <h2>Agrega Tus Gastos Aqui</h2>
