@@ -34,6 +34,7 @@ function App() {
             <Pregunta
             setPresupuesto={setPresupuesto}
             setPreguntaPresupuesto={setPreguntaPresupuesto}
+            setRestante={setRestante}
           />
             : (
                 <div className="row">
