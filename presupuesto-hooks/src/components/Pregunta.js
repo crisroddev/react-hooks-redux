@@ -14,8 +14,8 @@ const Pregunta = () => {
         e.preventDefault();
 
         // Validar
-        if(cantidad < 1 || isNan(cantidad) ) {
-            setError(ture);
+        if(cantidad < 1 || isNaN(cantidad) ) {
+            setError(true);
             return;
         }
         // Si pasa La Validacion
