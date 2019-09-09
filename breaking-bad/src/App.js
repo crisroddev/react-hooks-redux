@@ -7,7 +7,9 @@ function App() {
 
   const consultarApi = async () => {
     const resultado = await axios('https://breaking-bad-quotes.herokuapp.com/v1/quotes')
-    console.log(resultado)
+    // console.log(resultado)
+    // Agregar Resultado al State
+    obtenerFrase(resultado.data[0]);
 }
 
 
@@ -15,8 +17,9 @@ function App() {
   useEffect(
     () => {
       consultarApi()
-    }
-  )
+    }, [])
+
+  console.log(frase)
 
 
   return(
