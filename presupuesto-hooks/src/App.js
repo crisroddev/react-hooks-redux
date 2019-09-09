@@ -7,6 +7,8 @@ import Formulario from './components/Formulario';
 function App() {
   const [ presupuesto, setPresupuesto ] = useState(0);
   const [ preguntaPresupuesto, setPreguntaPresupuesto ] = useState(true);
+  const [ gasto, setGasto ] = useState({});
+  const [ gastos, setGastos ] = useState([]);
 
   return (
     <div className="App">
@@ -23,7 +25,9 @@ function App() {
             : (
                 <div className="row">
                   <div className="one-half column">
-                    <Formulario/>
+                    <Formulario
+                      setGasto={setGasto}
+                    />
                   </div>
                   <div className="one-half column">
                     <p>Listado Aqui</p>
