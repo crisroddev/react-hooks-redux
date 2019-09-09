@@ -34,6 +34,7 @@ const Formulario = () => {
                                         name="artista" 
                                         placeholder="Nombre Artista" 
                                         required
+                                        onChange={actualizarState}
                                     />
                                 </div>
                               </div>
@@ -46,6 +47,7 @@ const Formulario = () => {
                                         name="cancion" 
                                         placeholder="Nombre Canción" 
                                         required
+                                        onChange={actualizarState}
                                     />
                                 </div>
                               </div>
