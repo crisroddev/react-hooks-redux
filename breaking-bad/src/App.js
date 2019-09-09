@@ -7,12 +7,10 @@ function App() {
 
 
   // Consulta a RestAPI
-  useEffect(() => {
+  useEffect(
     async () => {
-      const resultado = await axios('https://breaking-bad-quotes.herokuapp.com/version1/quotes')
-      console.log(resultado);
-    }
-
+      const resultado = await axios('https://breaking-bad-quotes.herokuapp.com/v1/quotes')
+      console.log(resultado)
   })
 
 
