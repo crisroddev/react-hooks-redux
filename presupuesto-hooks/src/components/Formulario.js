@@ -49,6 +49,7 @@ const Formulario = (props) => {
                     type="text"
                     placeholder="Ej Transporte"
                     onChange={e => setNombreGasto(e.target.value)}
+                    value={nombreGasto}
                 />
             </div>
             <div className="campo">
@@ -58,6 +59,7 @@ const Formulario = (props) => {
                     type="number"
                     placeholder="Ej 300"
                     onChange={e => setCantidadGasto(e.target.value, 10)}
+                    value={cantidadGasto}
                 />
             </div>
             <input
