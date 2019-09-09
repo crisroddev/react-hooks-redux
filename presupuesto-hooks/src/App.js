@@ -6,7 +6,8 @@ import Formulario from './components/Formulario';
 import Listado from './components/Listado';
 
 function App() {
-  const [ presupuesto, setPresupuesto ] = useState(0);
+  const [ presupuesto , setPresupuesto ] = useState(0);
+  const [ restante, setRestante ] = useState(0);
   const [ preguntaPresupuesto, setPreguntaPresupuesto ] = useState(true);
   const [ gasto, setGasto ] = useState({});
   const [ gastos, setGastos ] = useState([]);
