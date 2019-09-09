@@ -3,7 +3,7 @@ import Error from './Error';
 
 const Pregunta = (props) => {
 
-    const {setPresupuesto, setPreguntaPresupuesto} = props;
+    const {setPresupuesto, setPreguntaPresupuesto, setRestante } = props;
     // Definir State
     const [ cantidad, setCantidad ] = useState(0);
     const [ error, setError ] = useState(false);
@@ -23,6 +23,7 @@ const Pregunta = (props) => {
         // Si pasa La Validacion
         setError(false)
         setPresupuesto(cantidad)
+        setRestante(cantidad)
         setPreguntaPresupuesto(false)
     }
 
