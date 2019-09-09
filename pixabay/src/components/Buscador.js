@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Error from './Error';
 
-const Buscador = () => {
+const Buscador = ({setBusqueda}) => {
 
     const [ terminoBusqueda, setTerminoBusqueda ] = useState('');
     const [ error, setError ] = useState(false);
@@ -16,6 +16,7 @@ const Buscador = () => {
         }
         // Enviar Termino a Componente Principal
         setError(false);
+        setBusqueda(terminoBusqueda)
     }
 
 
