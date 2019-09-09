@@ -5,8 +5,8 @@ import Pregunta from './components/Pregunta';
 
 function App() {
   const [ presupuesto, setPresupuesto ] = useState(0);
+  const [ preguntaPresupuesto, setPreguntaPresupuesto ] = useState(true);
 
-  
   return (
     <div className="App">
       <header>
@@ -15,6 +15,7 @@ function App() {
         <div className="contenido-principal contenido">
           <Pregunta
             setPresupuesto={setPresupuesto}
+            setPreguntaPresupuesto={setPreguntaPresupuesto}
           />
         </div>
       </header>
