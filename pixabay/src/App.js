@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import Buscador from './components/Buscador';
 
 function App() {
 
   const [ busqueda, setBusqueda ] = useState('');
+
+  useEffect(() => {
+    const consultarApi = async () => {
+      const imagenesPorPagina = 30;
+      const key = '13572348-e998cd81f08f11243f328ed57';
+      const url =`https://pixabay.com/api/?key=${key}&q=${busqueda}&per_page=${imagenesPorPagina}`;
+
+      const respuesta = await axios(url);
+      console.log(respuesta);
+    } 
+    consultarApi();
+  }, [busqueda])
+
+
 
   return (
     <div className="app container">
