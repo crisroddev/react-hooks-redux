@@ -5,6 +5,7 @@ import Buscador from './components/Buscador';
 function App() {
 
   const [ busqueda, setBusqueda ] = useState('');
+  const [ imagenes, guardarImagenes ] = useState([]);
 
   useEffect(() => {
 
@@ -16,8 +17,10 @@ function App() {
       const key = '13572348-e998cd81f08f11243f328ed57';
       const url =`https://pixabay.com/api/?key=${key}&q=${busqueda}&per_page=${imagenesPorPagina}`;
 
-      const respuesta = await axios(url);
-      console.log(respuesta);
+      const respuesta = await fetch(url);
+      const resultado = await respuesta.json();
+      
+      guardarImagenes(resultado.hits)
     } 
     consultarApi();
   }, [busqueda])
