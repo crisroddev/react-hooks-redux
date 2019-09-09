@@ -3,11 +3,16 @@ import React, {useState} from 'react'
 const Buscador = () => {
 
     const [ terminoBusqueda, setTerminoBusqueda ] = useState('');
+    const [ error, setError ] = useState(false);
 
     const handleSubmit= e => {
         e.preventDefault();
 
         // Validar
+        if(terminoBusqueda === ''){
+            setError(true);
+            return;
+        }
 
         // Enviar Termino a Componente Principal
 
