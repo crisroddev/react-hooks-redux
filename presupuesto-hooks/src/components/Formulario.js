@@ -23,7 +23,7 @@ const Formulario = (props) => {
         // Construir Objeto de Gasto
         const gasto = {
             nombreGasto,
-            nombreGasto,
+            cantidadGasto,
             id: shortid.generate()
         }
         
