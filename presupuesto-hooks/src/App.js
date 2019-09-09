@@ -10,6 +10,7 @@ function App() {
   const [ preguntaPresupuesto, setPreguntaPresupuesto ] = useState(true);
   const [ gasto, setGasto ] = useState({});
   const [ gastos, setGastos ] = useState([]);
+  const [ crearGasto, setCrearGasto ] = useState(false);
 
   useEffect(() => {
     const listadoGastos = [...gastos, gasto];
@@ -33,6 +34,7 @@ function App() {
                   <div className="one-half column">
                     <Formulario
                       setGasto={setGasto}
+                      setCrearGasto={setCrearGasto}
                     />
                   </div>
                   <div className="one-half column">
