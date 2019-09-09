@@ -19,7 +19,7 @@ const Formulario = ({consultarAPILetra}) => {
     // Cuando submit form 
     const handleSubmit = e => {
         e.preventdefault();
-        consultarAPILetra();
+        consultarAPILetra(busqueda);
     }
 
     return (

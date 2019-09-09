@@ -8,7 +8,8 @@ function App() {
   const [ info, setInfo ] = useState({});
 
   // Metodo Consultar API letras
-  const consultarAPILetra = () => {
+  const consultarAPILetra = busqueda => {
+    console.log(busqueda)
 
   }
 
