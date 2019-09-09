@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 // Components
 import Pregunta from './components/Pregunta';
+
+const [ presupuesto, setPresupuesto ] = useState(0);
 
 function App() {
   return (
@@ -10,7 +12,9 @@ function App() {
         <h1>Gasto Semanal</h1>
 
         <div className="contenido-principal contenido">
-          <Pregunta/>
+          <Pregunta
+            setPresupuesto={setPresupuesto}
+          />
         </div>
       </header>
     </div>
