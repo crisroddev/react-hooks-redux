@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { Fragment,useEffect, useState } from 'react';
 
 function App() {
   return (
-    <div className="App">
-    Hola
-    </div>
-  );
+    <p>Hola</p>
+  )
 }
 
 export default App;
+
