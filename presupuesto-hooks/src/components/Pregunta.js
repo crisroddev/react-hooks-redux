@@ -19,11 +19,13 @@ const Pregunta = () => {
             return;
         }
         // Si pasa La Validacion
+        setError(false)
     }
 
     return ( 
         <Fragment>
             <h2>Coloca tu Presupuesto</h2>
+            {error ? <p className="alert alert-danger error">El presupuesto es incorrecto</p>: null}
                 <form
                     onSubmit={handleSubmit}
                 >
