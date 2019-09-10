@@ -11,13 +11,15 @@ import Header  from './components/Header'
 function App() {
   return (
     <Router>
-      <Header/>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-      <Switch>
-        <Route exact path="/nuevo-producto" component={AgregarProducto}/>
-        <Route exact path="/productos-editar/:id" component={EditarProducto}/>
-        <Route exact path="/productos" component={Productos}/>
-        <Route exact path="/productos/:id" component={Producto}/>
-      </Switch>
+      <Header/>
+      <main className="container mt-5">
+        <Switch>
+          <Route exact path="/nuevo-producto" component={AgregarProducto}/>
+          <Route exact path="/productos-editar/:id" component={EditarProducto}/>
+          <Route exact path="/productos" component={Productos}/>
+          <Route exact path="/productos/:id" component={Producto}/>
+        </Switch>
+      </main>
     </Router>
   );
 }
