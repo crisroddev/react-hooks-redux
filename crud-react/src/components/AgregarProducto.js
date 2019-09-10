@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Error from './Error';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { withRouter } from 'react-router-dom';
 
-const AgregarProducto = () => {
+const AgregarProducto = ({history}) => {
+
 
     // States
     const [ nombre, setNombre ] = useState('');
@@ -46,6 +48,9 @@ const AgregarProducto = () => {
                 text: 'Hubo un error, vuelve a intentarlo'
             })
         }
+
+        // Redireccion
+        history.push('/productos')
     }
 
 
@@ -143,4 +148,4 @@ const AgregarProducto = () => {
      );
 }
  
-export default AgregarProducto;
+export default withRouter(AgregarProducto);

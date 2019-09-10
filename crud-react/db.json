@@ -41,6 +41,12 @@
       "precio": "1000",
       "categoria": "bebida",
       "id": 7
+    },
+    {
+      "nombre": "Coca-Cola Light",
+      "precio": "1000",
+      "categoria": "bebida",
+      "id": 8
     }
   ]
 }
