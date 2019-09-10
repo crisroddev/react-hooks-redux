@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Error  from './Error';
 
 const EditarProducto = () => {
+
+    // Generar los refs
+    const precioRef = useRef('');
+    const nombreRef = useRef('');
 
     const [ error, setError ] = useState(false);
     const [ categoria, setCategoria ] = useState('');
@@ -33,6 +37,8 @@ const EditarProducto = () => {
                         className="form-control" 
                         name="nombre" 
                         placeholder="Nombre Platillo"
+                        ref={nombreRef}
+                        
                     />
                 </div>
 
@@ -43,6 +49,7 @@ const EditarProducto = () => {
                         className="form-control" 
                         name="precio"
                         placeholder="Precio Platillo"
+                        ref={precioRef}
                     />
                 </div>
 
