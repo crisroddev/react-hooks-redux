@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Error  from './Error';
 
-const EditarProducto = () => {
+const EditarProducto = ({producto}) => {
 
     // Generar los refs
     const precioRef = useRef('');
@@ -38,7 +38,7 @@ const EditarProducto = () => {
                         name="nombre" 
                         placeholder="Nombre Platillo"
                         ref={nombreRef}
-                        
+                        defaultValue={producto.nombre}
                     />
                 </div>
 
@@ -50,6 +50,7 @@ const EditarProducto = () => {
                         name="precio"
                         placeholder="Precio Platillo"
                         ref={precioRef}
+                        defaultValue={producto.precio}
                     />
                 </div>
 
