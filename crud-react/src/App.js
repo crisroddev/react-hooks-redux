@@ -17,7 +17,10 @@ function App() {
     const consultarApi = async () => {
       // Cosultar Api de json-server
       const resultado = await axios.get('http://localhost:4000/restaurant')
-      console.log(resultado)
+      
+      // Guardo en el State
+      setProductos(resultado.data)
+
     }
     consultarApi();
   }, [])
