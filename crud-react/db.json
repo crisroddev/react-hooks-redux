@@ -1,14 +1,14 @@
 {
   "restaurant": [
     {
-      "precio": 200,
       "nombre": "Cheescake",
+      "precio": "2000",
       "categoria": "postre",
       "id": 1
     },
     {
-      "precio": 300,
       "nombre": "Rib Eye 400g",
+      "precio": "3000",
       "categoria": "cortes",
       "id": 2
     },
@@ -20,7 +20,7 @@
     },
     {
       "nombre": "Coca-Cola",
-      "precio": "1000",
+      "precio": "10000",
       "categoria": "bebida",
       "id": 4
     },

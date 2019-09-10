@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
 import Error  from './Error';
 import Axios from 'axios';
+import {withRouter} from 'react-router-dom';
 
-const EditarProducto = ({producto}) => {
+const EditarProducto = ({producto, history,setRecargarProductos}) => {
 
     // Generar los refs
     const precioRef = useRef('');
@@ -31,6 +32,10 @@ const EditarProducto = ({producto}) => {
         } catch (error) {
             console.log(error)
         }
+        setRecargarProductos(true)
+        history.push('/productos')
+
+
     }
 
     const leerValorRadio = e => {
@@ -137,4 +142,4 @@ const EditarProducto = ({producto}) => {
      );
 }
  
-export default EditarProducto;
+export default withRouter(EditarProducto);
