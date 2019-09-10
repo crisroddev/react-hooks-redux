@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Error from './Error';
+import axios from 'axios';
 
 const AgregarProducto = () => {
 
@@ -13,7 +14,7 @@ const AgregarProducto = () => {
         setCategoria(e.target.value)
     }
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
         if(nombre === '' || precio === '' || categoria === '') {
             setError(true)
@@ -21,9 +22,17 @@ const AgregarProducto = () => {
         }
         // Pasa Validacion
         setError(false)
-
         // Crear Nuevo Producto
-
+        try {
+            const resultado = await axios.post('http://localhost:4000/restaurant', {
+                nombre, 
+                precio, 
+                categoria
+            });
+            console.log(resultado)
+        } catch (error ) {
+            console.log(error)
+        }
     }
 
 

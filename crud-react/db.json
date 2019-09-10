@@ -1,16 +1,22 @@
 {
-    "restaurant": [
-        {
-            "precio": 200,
-            "nombre": "Cheescake",
-            "categoria": "postres",
-            "id": 1
-        },
-        {
-            "precio": 300,
-            "nombre": "Rib Eye 400g",
-            "categoria": "cortes",
-            "id": 2
-        }
-    ]
+  "restaurant": [
+    {
+      "precio": 200,
+      "nombre": "Cheescake",
+      "categoria": "postres",
+      "id": 1
+    },
+    {
+      "precio": 300,
+      "nombre": "Rib Eye 400g",
+      "categoria": "cortes",
+      "id": 2
+    },
+    {
+      "nombre": "Ensalada Caesar",
+      "precio": "3990",
+      "categoria": "ensalada",
+      "id": 3
+    }
+  ]
 }
