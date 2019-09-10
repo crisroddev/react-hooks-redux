@@ -12,18 +12,24 @@ import Header  from './components/Header'
 function App() {
 
   const [ productos, setProductos ] = useState([]);
+  const [recargarProductos, setRecargarProductos ] = useState(true);
 
   useEffect(() => {
-    const consultarApi = async () => {
-      // Cosultar Api de json-server
-      const resultado = await axios.get('http://localhost:4000/restaurant')
-      
-      // Guardo en el State
-      setProductos(resultado.data)
+    if(recargarProductos) {
+      const consultarApi = async () => {
+        // Cosultar Api de json-server
+        const resultado = await axios.get('http://localhost:4000/restaurant')
+        
+        // Guardo en el State
+        setProductos(resultado.data)
+  
+      }
+      consultarApi();
 
+      // Cambiar a False Recarga
+      setRecargarProductos(false)
     }
-    consultarApi();
-  }, [])
+  }, [recargarProductos])
 
 
   return (
@@ -36,7 +42,11 @@ function App() {
               productos={productos}
             />
           )}/>
-          <Route exact path="/nuevo-producto" component={AgregarProducto}/>
+          <Route exact path="/nuevo-producto" render={() => (
+            <AgregarProducto 
+            setRecargarProductos={setRecargarProductos}
+            />
+          )}/>
           <Route exact path="/productos-editar/:id" component={EditarProducto}/>
           <Route exact path="/productos/:id" component={Producto}/>
         </Switch>
