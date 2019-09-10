@@ -7,6 +7,8 @@ function App() {
 
   const [ busqueda, setBusqueda ] = useState('');
   const [ imagenes, guardarImagenes ] = useState([]);
+  const [ paginaActual, setPaginaActual ] = useState(1);
+  const [ totalPaginas, setTotalPaginas ] = useState(1);
 
   useEffect(() => {
 
