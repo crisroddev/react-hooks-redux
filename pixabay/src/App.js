@@ -49,6 +49,16 @@ function App() {
         <ListadoImagenes
           imagenes={imagenes}
         />
+        <button
+          type="button"
+          className="btn btn-info mr-1">
+            Anterior &laquo;
+        </button>
+        <button
+          type="button"
+          className="btn btn-info">
+            Siguiente &raquo;
+        </button>
       </div>
     </div>
   );
