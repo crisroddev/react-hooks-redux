@@ -11,7 +11,14 @@ const EditarProducto = ({producto}) => {
     const [ categoria, setCategoria ] = useState('');
 
     const handleSubmit = e => {
+        e.preventDefault();
 
+        const editarPlato = {
+            nombre: nombreRef.current.value,
+            precio: precioRef.current.value
+        }
+
+        console.log(editarPlato)
     }
 
     const leerValorRadio = e => {
