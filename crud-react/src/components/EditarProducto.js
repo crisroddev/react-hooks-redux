@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Error  from './Error';
+import Axios from 'axios';
 
 const EditarProducto = ({producto}) => {
 
@@ -10,15 +11,26 @@ const EditarProducto = ({producto}) => {
     const [ error, setError ] = useState(false);
     const [ categoria, setCategoria ] = useState('');
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
+
+        // Revisar Categoria
+        let categoriaPlato = (categoria === '') ? producto.categoria : categoria;
 
         const editarPlato = {
             nombre: nombreRef.current.value,
-            precio: precioRef.current.value
+            precio: precioRef.current.value,
+            categoria: categoriaPlato
         }
 
-        console.log(editarPlato)
+        // Envio Request
+        const url = `http://localhost:4000/restaurant/${producto.id}`;
+        try {
+            const resultado = await Axios.put(url, editarPlato);
+
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     const leerValorRadio = e => {
