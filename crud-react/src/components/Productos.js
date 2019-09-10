@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import ProductoLista from './ProductoLista';
 
-const Productos = ({productos}) => {
+const Productos = ({productos, setRecargarProductos}) => {
     return ( 
         <Fragment>
             <h1 className="text-center">
@@ -10,6 +10,7 @@ const Productos = ({productos}) => {
             <ul className="list-group mt-5">
                 {productos.map(producto => (
                     <ProductoLista
+                        setRecargarProductos={setRecargarProductos}
                         producto={producto}
                         key={producto.id}
                     />

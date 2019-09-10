@@ -40,6 +40,7 @@ function App() {
           <Route exact path="/productos" render={() => (
             <Productos
               productos={productos}
+              setRecargarProductos={setRecargarProductos}
             />
           )}/>
           <Route exact path="/nuevo-producto" render={() => (

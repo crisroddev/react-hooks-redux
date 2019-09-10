@@ -1,28 +1,10 @@
 {
   "restaurant": [
     {
-      "nombre": "Cheescake",
-      "precio": "2000",
-      "categoria": "postre",
-      "id": 1
-    },
-    {
-      "nombre": "Rib Eye 400g",
-      "precio": "3000",
-      "categoria": "cortes",
-      "id": 2
-    },
-    {
       "nombre": "Ensalada Caesar",
       "precio": "2990",
       "categoria": "ensalada",
       "id": 3
-    },
-    {
-      "nombre": "Coca-Cola",
-      "precio": "10000",
-      "categoria": "bebida",
-      "id": 4
     },
     {
       "nombre": "Coca-Cola",

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-const ProductoLista = ({producto}) => {
+const ProductoLista = ({producto, setRecargarProductos}) => {
 
     const handleClick = id => {
         Swal.fire({
@@ -15,11 +15,9 @@ const ProductoLista = ({producto}) => {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Si, Eliminar!',
             cancelButtonText: 'Cancelar'
-          }).then((result) => {
+          }).then(async (result) => {
             const url = ` http://localhost:4000/restaurant/${id}`;
-            console.log(url)
-
-
+            const resultado = await axios.delete(url)
 
             if (result.value) {
               Swal.fire(
@@ -28,7 +26,10 @@ const ProductoLista = ({producto}) => {
                 'success'
               )
             }
+
+            setRecargarProductos(true)
           })
+          
     }
 
     return ( 
