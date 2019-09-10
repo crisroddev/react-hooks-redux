@@ -7,6 +7,10 @@ const AgregarProducto = () => {
     const [ precio, setPrecio ] = useState('');
     const [ categoria, setCategoria ] = useState('');
 
+    const leerValorRadio = e =>{
+        setCategoria(e.target.value)
+    }
+
 
     return ( 
         <div className="col-md-8 mx-auto ">
@@ -45,6 +49,7 @@ const AgregarProducto = () => {
                         type="radio" 
                         name="categoria"
                         value="postre"
+                        onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
                         Postre
@@ -56,6 +61,7 @@ const AgregarProducto = () => {
                         type="radio" 
                         name="categoria"
                         value="bebida"
+                        onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
                         Bebida
@@ -68,6 +74,7 @@ const AgregarProducto = () => {
                         type="radio" 
                         name="categoria"
                         value="cortes"
+                        onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
                         Cortes
@@ -80,6 +87,7 @@ const AgregarProducto = () => {
                         type="radio" 
                         name="categoria"
                         value="ensalada"
+                        onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
                         Ensalada
