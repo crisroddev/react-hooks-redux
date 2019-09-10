@@ -1,10 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const ProductoLista = ({producto}) => {
 
     const handleClick = id => {
-        console.log('Eliminando', producto.id)
+        Swal.fire({
+            title: 'Seguro Quieres Eliminar',
+            text: "Esto sera Definitivo!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminar!',
+            cancelButtonText: 'Cancelar'
+          }).then((result) => {
+            if (result.value) {
+              Swal.fire(
+                'Eliminado!',
+                'Producto Eliminado.',
+                'success'
+              )
+            }
+          })
     }
 
     return ( 
@@ -27,7 +46,7 @@ const ProductoLista = ({producto}) => {
                     type="button"
                     className="btn btn-danger"
                     onClick={handleClick}>
-                    Eiminar &times;
+                    Eliminar &times;
                 </button>
             </div>
         </li>
