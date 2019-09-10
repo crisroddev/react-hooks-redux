@@ -9,6 +9,23 @@ const Header = () => (
                 className="navbar-brand">
                     React CRUD & Routing
             </Link>
+
+            <ul className="navbar-nav mr-auto">
+                <li className="nav-item">
+                    <Link
+                        to="/productos"
+                        className="nav-link">
+                        Productos
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link
+                        to="/nuevo-producto"
+                        className="nav-link">
+                        Nuevo Producto
+                    </Link>
+                </li>
+            </ul>
         </div>
     </nav>
 );
