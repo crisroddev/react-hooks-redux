@@ -15,3 +15,10 @@ useEffect(() => {
 ```
 json-server db.json -p 4000
 ```
+
+## Con Routes para pasar pro props
+render={ ()=> (
+  <Productos
+    productos={productos}
+  />
+)}
