@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Error from './Error';
 
 const AgregarProducto = () => {
 
@@ -22,6 +23,7 @@ const AgregarProducto = () => {
         setError(false)
 
         // Crear Nuevo Producto
+
     }
 
 
@@ -29,7 +31,7 @@ const AgregarProducto = () => {
         <div className="col-md-8 mx-auto ">
             <h1 className="text-center">Agregar Nuevo Producto</h1>
             {error ? 
-                <div className="alert alert-danger text-center mt-5">Llenar todos los campos</div> : 
+                <Error mensaje="Llenar todos los campos"/> : 
                 null
             }
 
