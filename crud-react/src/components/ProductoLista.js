@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductoLista = ({producto}) => {
+
+    const handleClick = id => {
+        console.log('Eliminando', producto.id)
+    }
+
     return ( 
         <li 
             className="list-group-item d-flex justify-content-between align-items-center"
@@ -18,6 +23,12 @@ const ProductoLista = ({producto}) => {
                     className="btn btn-success mr-2">
                     Editar
                 </Link>
+                <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={handleClick}>
+                    Eiminar &times;
+                </button>
             </div>
         </li>
      );
