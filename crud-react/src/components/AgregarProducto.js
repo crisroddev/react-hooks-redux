@@ -4,7 +4,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { withRouter } from 'react-router-dom';
 
-const AgregarProducto = ({history}) => {
+const AgregarProducto = ({history, setRecargarProductos}) => {
 
 
     // States
@@ -50,6 +50,7 @@ const AgregarProducto = ({history}) => {
         }
 
         // Redireccion
+        setRecargarProductos(true)
         history.push('/productos')
     }
 
