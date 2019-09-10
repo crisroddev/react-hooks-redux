@@ -47,7 +47,13 @@ function App() {
             setRecargarProductos={setRecargarProductos}
             />
           )}/>
-          <Route exact path="/productos-editar/:id" component={EditarProducto}/>
+          <Route exact path="/productos-editar/:id" render={props => {
+            console.log(props.match.params.id);
+
+            return (
+              <EditarProducto/>
+            )
+          }}/>
           <Route exact path="/productos/:id" component={Producto}/>
         </Switch>
       </main>
