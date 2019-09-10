@@ -24,6 +24,11 @@ function App() {
       const resultado = await respuesta.json();
       
       guardarImagenes(resultado.hits)
+
+      // Calcular Total de Paginas Redondeado Hacia Arriba
+      const calcularTotalPaginas = Math.ceil(resultado.totalHits / imagenesPorPagina);
+      setTotalPaginas(calcularTotalPaginas)
+      
     } 
     consultarApi();
   }, [busqueda])
