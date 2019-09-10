@@ -28,12 +28,23 @@ function App() {
       // Calcular Total de Paginas Redondeado Hacia Arriba
       const calcularTotalPaginas = Math.ceil(resultado.totalHits / imagenesPorPagina);
       setTotalPaginas(calcularTotalPaginas)
-      
     } 
     consultarApi();
   }, [busqueda])
 
+  const paginaAnterior = () => {
+    let nuevaPaginaAnterior = paginaActual - 1;
+    
+    // Colocarlo en el State
+    setPaginaActual(nuevaPaginaAnterior);
+  }
 
+  const paginaSiguiente = () => {
+    let nuevaPaginaSiguiente = paginaActual + 1;
+    
+    // Colocarlo en State
+    setPaginaActual(nuevaPaginaSiguiente)
+  }
 
   return (
     <div className="app container">
@@ -50,11 +61,13 @@ function App() {
           imagenes={imagenes}
         />
         <button
+          onClick={paginaAnterior}
           type="button"
           className="btn btn-info mr-1">
             Anterior &laquo;
         </button>
         <button
+          onClick={paginaSiguiente}
           type="button"
           className="btn btn-info">
             Siguiente &raquo;
