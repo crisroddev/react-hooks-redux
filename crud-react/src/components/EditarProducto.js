@@ -63,6 +63,7 @@ const EditarProducto = ({producto}) => {
                         name="categoria"
                         value="postre"
                         onChange={leerValorRadio}
+                        defaultChecked={(producto.categoria === 'postre')}
                     />
                     <label className="form-check-label">
                         Postre
@@ -75,6 +76,7 @@ const EditarProducto = ({producto}) => {
                         name="categoria"
                         value="bebida"
                         onChange={leerValorRadio}
+                        defaultChecked={(producto.categoria === 'bebida')}
                     />
                     <label className="form-check-label">
                         Bebida
@@ -88,6 +90,7 @@ const EditarProducto = ({producto}) => {
                         name="categoria"
                         value="cortes"
                         onChange={leerValorRadio}
+                        defaultChecked={(producto.categoria === 'cortes')}
                     />
                     <label className="form-check-label">
                         Cortes
@@ -101,6 +104,7 @@ const EditarProducto = ({producto}) => {
                         name="categoria"
                         value="ensalada"
                         onChange={leerValorRadio}
+                        defaultChecked={(producto.categoria === 'ensalada')}
                     />
                     <label className="form-check-label">
                         Ensalada
