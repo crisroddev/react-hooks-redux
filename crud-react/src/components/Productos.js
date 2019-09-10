@@ -10,6 +10,7 @@ const Productos = ({productos}) => {
             <ul className="list-group mt-5">
                 {productos.map(producto => (
                     <ProductoLista
+                        producto={producto}
                         key={producto.id}
                     />
                 ))}
