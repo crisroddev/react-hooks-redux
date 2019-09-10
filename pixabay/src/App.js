@@ -41,7 +41,7 @@ function App() {
 
   const paginaSiguiente = () => {
     let nuevaPaginaSiguiente = paginaActual + 1;
-    
+
     // Colocarlo en State
     setPaginaActual(nuevaPaginaSiguiente)
   }
@@ -60,12 +60,17 @@ function App() {
         <ListadoImagenes
           imagenes={imagenes}
         />
-        <button
-          onClick={paginaAnterior}
-          type="button"
-          className="btn btn-info mr-1">
-            Anterior &laquo;
+        { (paginaActual === 1) ? 
+          null : (
+            <button
+              onClick={paginaAnterior}
+              type="button"
+              className="btn btn-info mr-1">
+                Anterior &laquo;
         </button>
+          )
+        }
+        
         <button
           onClick={paginaSiguiente}
           type="button"
