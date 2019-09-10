@@ -6,17 +6,35 @@ const AgregarProducto = () => {
     const [ nombre, setNombre ] = useState('');
     const [ precio, setPrecio ] = useState('');
     const [ categoria, setCategoria ] = useState('');
+    const [ error, setError ] = useState(false);
 
     const leerValorRadio = e =>{
         setCategoria(e.target.value)
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        if(nombre === '' || precio === '' || categoria === '') {
+            setError(true)
+            return;
+        }
+        // Pasa Validacion
+        setError(false)
+
+        // Crear Nuevo Producto
     }
 
 
     return ( 
         <div className="col-md-8 mx-auto ">
             <h1 className="text-center">Agregar Nuevo Producto</h1>
+            {error ? 
+                <div className="alert alert-danger text-center mt-5">Llenar todos los campos</div> : 
+                null
+            }
 
             <form
+                onSubmit={handleSubmit}
                 className="mt-5"
             >
                 <div className="form-group">
