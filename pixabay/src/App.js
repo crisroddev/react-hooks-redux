@@ -31,7 +31,7 @@ function App() {
 
       // Llevar ausuario hacia parte superior
       const jumbotron = document.querySelector('.jumbotron');
-      jumbotron.scrollIntoView('smooth', 'start');
+      jumbotron.scrollIntoView({behavior: 'smooth', block: 'start'});
     } 
     consultarApi();
   }, [busqueda, paginaActual])
