@@ -48,10 +48,15 @@ function App() {
             />
           )}/>
           <Route exact path="/productos-editar/:id" render={props => {
-            console.log(props.match.params.id);
+            // Paso id a number
+            const idProducto = parseInt(props.match.params.id);
 
+            // Producto al State
+            const producto = productos.filter(producto => producto.id === idProducto);
             return (
-              <EditarProducto/>
+              <EditarProducto
+                producto={producto[0]}
+              />
             )
           }}/>
           <Route exact path="/productos/:id" component={Producto}/>
