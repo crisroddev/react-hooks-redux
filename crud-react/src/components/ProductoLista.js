@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductoLista = ({producto}) => {
     return ( 
@@ -12,7 +13,11 @@ const ProductoLista = ({producto}) => {
                 </span>
             </p>
             <div>
-
+                <Link 
+                    to={`productos-editar/${producto.id}`}
+                    className="btn btn-success mr-2">
+                    Editar
+                </Link>
             </div>
         </li>
      );
