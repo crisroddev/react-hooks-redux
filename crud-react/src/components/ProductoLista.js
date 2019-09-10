@@ -16,6 +16,11 @@ const ProductoLista = ({producto}) => {
             confirmButtonText: 'Si, Eliminar!',
             cancelButtonText: 'Cancelar'
           }).then((result) => {
+            const url = ` http://localhost:4000/restaurant/${id}`;
+            console.log(url)
+
+
+
             if (result.value) {
               Swal.fire(
                 'Eliminado!',
@@ -45,7 +50,7 @@ const ProductoLista = ({producto}) => {
                 <button
                     type="button"
                     className="btn btn-danger"
-                    onClick={handleClick}>
+                    onClick={() => handleClick(producto.id)}>
                     Eliminar &times;
                 </button>
             </div>
