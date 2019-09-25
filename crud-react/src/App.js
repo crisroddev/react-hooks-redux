@@ -12,12 +12,14 @@ function App() {
   return (
     <Router>
     <Header/>
-      <Switch>
-        <Route exact path="/productos" component={Productos}/>
-        <Route exact path="/productos/:id" component={Producto}/>
-        <Route exact path="/nuevo-producto" component={AgregarProducto}/>
-        <Route exact path="/productos/editar/:id" component={EditarProducto}/>
-      </Switch>
+    <main className="container mt-5">
+        <Switch>
+          <Route exact path="/productos" component={Productos}/>
+          <Route exact path="/productos/:id" component={Producto}/>
+          <Route exact path="/nuevo-producto" component={AgregarProducto}/>
+          <Route exact path="/productos/editar/:id" component={EditarProducto}/>
+        </Switch>
+      </main>
     </Router>
   );
 }
