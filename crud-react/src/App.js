@@ -6,10 +6,12 @@ import Productos from './components/Productos';
 import Producto from './components/Producto';
 import AgregarProducto from './components/AgregarProducto';
 import EditarProducto from './components/EditarProducto';
+import Header from './components/Header';
 
 function App() {
   return (
     <Router>
+    <Header/>
       <Switch>
         <Route exact path="/productos" component={Productos}/>
         <Route exact path="/productos/:id" component={Producto}/>
