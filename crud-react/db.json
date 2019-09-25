@@ -1,0 +1,16 @@
+{
+    "restaurante":[
+        {
+            "precio": "200",
+            "nombre": "Burger",
+            "categoria": "comida",
+            "id": 1
+        },
+        {
+            "precio": "400",
+            "nombre": "Cheescake",
+            "categoria": "postres",
+            "id": 2
+        }
+    ]
+}
