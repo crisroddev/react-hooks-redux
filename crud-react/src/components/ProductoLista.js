@@ -1,8 +1,19 @@
 import React from 'react'
 
-const ProductoLista = () => {
+const ProductoLista = ({producto}) => {
     return ( 
-        <div></div>
+        <li 
+            data-categoria={producto.categoria}
+            className="list-group-item d-flex justify-content-between align-items-center">
+            <p>
+                {producto.nombre} {''}
+                <span className="font-weight-bold">${producto.precio}</span>
+            </p>
+            <div>
+
+            </div>
+        </li>
+
      );
 }
  
