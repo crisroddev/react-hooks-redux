@@ -1,0 +1,16 @@
+{
+    "restaurante": [
+        {
+            "precio": "200",
+            "nombre": "Cheescake",
+            "categoria": "postres",
+            "id": 1
+        },
+        {
+            "precio": "300",
+            "nombre": "Rib Eye",
+            "categoria": "cortes",
+            "id": 2
+        }
+    ]
+}
