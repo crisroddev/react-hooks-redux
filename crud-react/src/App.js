@@ -27,7 +27,12 @@ function App(){
             <Header/>
             <main className="container mt-5">
                 <Switch>
-                    <Route exact path="/productos" component={Productos}/>
+                    <Route exact path="/productos" 
+                        render={() => (
+                            <Productos
+                                productos={productos}
+                            />
+                        )}/>
                     <Route exact path="/nuevo-producto" component={AgregarProducto}/>
                     <Route exact path="/editar-producto/:id" component={EditarProducto}/>
                     <Route exact path="/producto/:id" component={Producto}/>
