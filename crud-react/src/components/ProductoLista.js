@@ -24,7 +24,7 @@ const ProductoLista = ({producto}) => {
                 type="button"
                 className="btn btn-danger"
                 onClick={() => handleClick(producto.id)}>
-                Eliminar
+                Eliminar &times;
             </button>
         </div>
     </li>
