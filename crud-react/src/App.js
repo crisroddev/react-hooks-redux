@@ -11,12 +11,13 @@ import Header from './components/Header';
 
 function App() {
 
-  const [ productos, setOProductos ] = useState([]);
+  const [ productos, setProductos ] = useState([]);
 
   useEffect(() =>{
     const consultarApi = async () => {
       const resultado = await axios.get('http://localhost:4000/restaurante');
-      console.log(resultado)
+      // console.log(resultado)
+      setProductos(resultado.data)
     }
     consultarApi()
   }, []);
