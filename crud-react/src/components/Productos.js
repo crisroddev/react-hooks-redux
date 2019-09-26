@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
+import ProductoLista from './ProductoLista';
 
 const Productos = ({productos}) => {
     return ( 
@@ -8,6 +9,7 @@ const Productos = ({productos}) => {
                 {productos.map(producto => (
                     <ProductoLista
                         key={producto.id}
+                        producto={producto}
                     />
                 ))}
             </ul>
