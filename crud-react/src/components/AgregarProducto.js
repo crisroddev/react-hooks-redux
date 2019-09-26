@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const AgregarProducto = () => {
+
+    const [ nombre, setNombre ] = useState('');
+    const [ precio, setPrecio ] = useState('');
+    const [ categoria, setCategoria] = useState('');
+
+
     return ( 
         <div className="col-md-8 mx-auto ">
             <h1 className="text-center">Agregar Nuevo Producto</h1>
