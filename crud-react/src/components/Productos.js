@@ -1,4 +1,5 @@
-import React, {Fragment} from 'react'
+import React, {Fragment} from 'react';
+import ProductoLista from './ProductoLista'
 
 const Productos = ({productos}) => {
     return ( 
@@ -6,7 +7,10 @@ const Productos = ({productos}) => {
             <h1 className="text-center">Productos</h1>
             <ul className="list-group mt-5">
                 {productos.map(producto => (
-                    <ProductoLista/>
+                    <ProductoLista
+                    key={producto.id}
+                        producto={producto}
+                    />
                 ))}
             </ul>
 
