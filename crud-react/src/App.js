@@ -17,7 +17,7 @@ function App(){
     useEffect(() => {
         const consultarApi = async () => {
             const resultado = await axios.get('http://localhost:4000/restaurante');
-            console.log(resultado)
+            setProductos(resultado.data)
         }
         consultarApi();
     },[]);
