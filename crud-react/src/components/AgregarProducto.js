@@ -18,7 +18,8 @@ const AgregarProducto = () => {
                         type="text" 
                         className="form-control" 
                         name="nombre" 
-                        placeholder="Nombre Platillo"/>
+                        placeholder="Nombre Platillo"
+                        onChange={e => setNombre(e.target.value)}/>
                 </div>
 
                 <div className="form-group">
@@ -27,7 +28,8 @@ const AgregarProducto = () => {
                         type="number" 
                         className="form-control" 
                         name="precio"
-                        placeholder="Precio Platillo"/>
+                        placeholder="Precio Platillo"
+                        onChange={e => setPrecio(e.target.value)}/>
                 </div>
 
                 <legend className="text-center">Categoría:</legend>
