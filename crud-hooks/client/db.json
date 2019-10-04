@@ -1,16 +1,22 @@
 {
-    "restautante" : [
-        {
-            "nombre": "Cheesecake",
-            "precio": 200,
-            "categoria": "postres",
-            "id": 1
-        },
-        {
-            "nombre": "Carne 300 GR",
-            "precio": 200,
-            "categoria": "cortes",
-            "id": 2
-        }
-    ]
+  "restautante": [
+    {
+      "nombre": "Cheesecake",
+      "precio": 200,
+      "categoria": "postres",
+      "id": 1
+    },
+    {
+      "nombre": "Carne 300 GR",
+      "precio": 200,
+      "categoria": "cortes",
+      "id": 2
+    },
+    {
+      "nombre": "Ensalada Cesar",
+      "precio": "12",
+      "categoria": "ensalada",
+      "id": 3
+    }
+  ]
 }
