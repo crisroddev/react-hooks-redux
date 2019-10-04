@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Error from '../helpers/Error';
 import axios from 'axios';
+import Swal from 'sweetalert2';
+import {withRouter} from 'react-router-dom';
  
-const AgregarProducto = () => {
+const AgregarProducto = ({history, setRecargar}) => {
 
     const leerValorRadio = e=> {
         setCategoria(e.target.value)
@@ -30,9 +32,25 @@ const AgregarProducto = () => {
                 categoria
             });
 
+            if(resultado === 200) {
+                Swal.fire(
+                    'Producto Creado',
+                    'El Producto se creo Exitosamente',
+                    'success'
+                )
+            }
+
+
         } catch (error){
             console.log(error)
+            Swal.fire({
+                tyoe: 'error',
+                title: 'Error',
+                text: 'Hubo un error'
+            })
         }
+        setRecargar(true)
+        history.push('/productos')
 
     }
 
@@ -129,4 +147,4 @@ const AgregarProducto = () => {
      );
 }
  
-export default AgregarProducto;
+export default withRouter(AgregarProducto);

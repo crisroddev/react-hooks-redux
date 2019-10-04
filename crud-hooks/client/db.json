@@ -17,6 +17,18 @@
       "precio": "12",
       "categoria": "ensalada",
       "id": 3
+    },
+    {
+      "nombre": "Coca-Cola",
+      "precio": "1",
+      "categoria": "bebida",
+      "id": 4
+    },
+    {
+      "nombre": "sprite",
+      "precio": "12",
+      "categoria": "bebida",
+      "id": 5
     }
   ]
 }

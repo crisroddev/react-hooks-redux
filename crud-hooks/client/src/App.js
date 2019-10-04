@@ -14,14 +14,18 @@ import Header from './components/layouts/Header';
 function App() {
 
   const [productos, setProductos] = useState([]);
+  const [recargar, setRecargar] = useState(true);
 
   useEffect(() => {
-    const consultarAPI = async () => {
-      const resultado = await axios.get('http://localhost:4000/restautante');
-      setProductos(resultado.data)
+    if(recargar) {
+      const consultarAPI = async () => {
+        const resultado = await axios.get('http://localhost:4000/restautante');
+        setProductos(resultado.data)
+      }
+      consultarAPI();
+      setRecargar(false)
     }
-    consultarAPI();
-  }, [])
+  }, [recargar])
 
   return (
     <div className="App">
@@ -35,7 +39,13 @@ function App() {
                       productos={productos}
                     />
               )}/>
-              <Route exact path="/nuevo-producto" component={AgregarProducto}/>
+              <Route exact path="/nuevo-producto" 
+                render={() => (
+                  <AgregarProducto
+                    setRecargar={setRecargar}
+                  />
+                )}
+              />
               <Route exact path="/editar-producto/:id" component={EditarProducto}/>
               <Route exact path="/producto/:id" component={Producto}/>
             </Switch>
