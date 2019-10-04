@@ -3,12 +3,14 @@
         {
             "nombre": "Cheesecake",
             "precio": 200,
-            "categoria": "postres"
+            "categoria": "postres",
+            "id": 1
         },
         {
             "nombre": "Carne 300 GR",
             "precio": 200,
-            "categoria": "cortes"
+            "categoria": "cortes",
+            "id": 2
         }
     ]
 }
