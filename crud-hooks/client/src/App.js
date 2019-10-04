@@ -53,6 +53,7 @@ function App() {
                   return (
                     <EditarProducto
                       producto={producto[0]}
+                      setRecargar={setRecargar}
                     />
                   )
                 }}
