@@ -1,0 +1,14 @@
+{
+    "restautante" : [
+        {
+            "nombre": "Cheesecake",
+            "precio": 200,
+            "categoria": "postres"
+        },
+        {
+            "nombre": "Carne 300 GR",
+            "precio": 200,
+            "categoria": "cortes"
+        }
+    ]
+}
