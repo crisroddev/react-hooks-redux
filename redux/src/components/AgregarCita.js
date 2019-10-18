@@ -19,7 +19,7 @@ const AgregarCita = () => {
 
     // Acceder al error
     const error = useSelector((state) => state.error);
-    console.log(error)
+    // console.log(error)
 
     const handleSubmit = e => {
         e.preventDefault();
