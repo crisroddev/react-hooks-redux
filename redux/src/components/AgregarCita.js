@@ -1,5 +1,8 @@
-import React, { useState } from 'react'
- 
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { agregarCitaAction } from '../actions/citasActions';
+import { validarFormularioAction } from '../actions/validarActions';
+import uuid from 'uuid/v4';
 
 const AgregarCita = () => {
 
@@ -9,18 +12,40 @@ const AgregarCita = () => {
     const [hora, setHora] = useState('');
     const [sintomas, setSintomas] = useState('');
 
+    // Dispatch para ejecutar Acciones
+    const dispatch = useDispatch();
+    const agregarNuevaCita = (cita) => dispatch(agregarCitaAction(cita) )
+    const validarFormulario = (estado) => dispatch(validarFormularioAction(estado))
+
     const handleSubmit = e => {
         e.preventDefault();
 
         // Validar Form
+        if(mascota.trim() === '' || propietario.trim() === '' || fecha.trim() === '' || hora.trim() === '' || sintomas.trim() === '') {
+            validarFormulario(true);
+            return;
+        }
+        validarFormulario(false)
 
 
         // Crear Cita
-
+        agregarNuevaCita({
+            id: uuid(),
+            mascota,
+            propietario,
+            fecha,
+            hora,
+            sintomas
+        })
 
         // ALmacenar State
 
         // Reiniciar Form
+        setMascota('');
+        setPropietario('');
+        setFecha('');
+        setHora('');
+        setSintomas('');
     }
 
 
