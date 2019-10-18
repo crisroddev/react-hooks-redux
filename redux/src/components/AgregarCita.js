@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { agregarCitaAction } from '../actions/citasActions';
 import { validarFormularioAction } from '../actions/validarActions';
 import uuid from 'uuid/v4';
@@ -16,6 +16,10 @@ const AgregarCita = () => {
     const dispatch = useDispatch();
     const agregarNuevaCita = (cita) => dispatch(agregarCitaAction(cita) )
     const validarFormulario = (estado) => dispatch(validarFormularioAction(estado))
+
+    // Acceder al error
+    const error = useSelector((state) => state.error);
+    console.log(error)
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -119,6 +123,11 @@ const AgregarCita = () => {
                     </div>
                 </div>
             </form>
+            { 
+                error.error ? 
+                    <div className="alert alert-danger text-center p2">Todos los campos obligatorios</div> : 
+                    null
+            }
            
         </div>
 </div>
