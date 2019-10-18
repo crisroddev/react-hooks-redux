@@ -3,6 +3,8 @@ import { createStore } from 'redux';
 // Definir state inicial
 const initialState = [];
 
+const reducer = {};
+
 const store = createStore(
     reducer,
     initialState,
