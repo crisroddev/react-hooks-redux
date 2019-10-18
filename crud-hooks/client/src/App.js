@@ -27,6 +27,8 @@ function App() {
     }
   }, [recargar])
 
+  console.log(productos);
+
   return (
     <div className="App">
       <Router>
