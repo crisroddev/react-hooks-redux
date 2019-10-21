@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const clienteAxios = axios.create({
-    baseUrl: 'hyyp://localhost:4000'
+    baseURL: 'http://localhost:400'
 });
 
 export default clienteAxios;
