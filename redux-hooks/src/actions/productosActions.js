@@ -4,11 +4,24 @@ import {
     AGREGAR_PRODUCTO_ERROR
 } from '../types';
 
+import clienteAxios from '../config/axios';
+
 // Crear Nuevo Producto Funcion Principal
 export function crearNuevoProductoAction(producto){
     return (dispatch) => {
         dispatch( nuevoProducto() )
-        dispatch( nuevoProductoExito(producto) )
+
+        // Insertar en la API
+        clienteAxios.post('/librs', producto)
+            .then(res => {
+                console.log(res)
+                dispatch( nuevoProductoExito(producto) )
+            })
+            .catch(error => {
+                console.log(error)
+                dispatch( nuevoProductoError(error) )
+            })
+        
     }
 }
 
@@ -19,4 +32,9 @@ export const nuevoProducto = () => ({
 export const nuevoProductoExito = (producto) => ({
     type: AGREGAR_PRODUCTO_EXITO,
     payload: producto
+});
+
+export const nuevoProductoError = (error) => ({
+    type: AGREGAR_PRODUCTO_ERROR,
+    payload: error
 });

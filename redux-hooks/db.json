@@ -14,6 +14,11 @@
       "nombre": "React",
       "precio": "30",
       "id": 3
+    },
+    {
+      "nombre": "MongoDB",
+      "precio": "100",
+      "id": 4
     }
   ]
 }
