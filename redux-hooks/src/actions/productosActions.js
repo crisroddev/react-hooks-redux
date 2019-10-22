@@ -53,7 +53,8 @@ export function obtenerProductosAction(){
                 dispatch( descargaProductosExitosa(res.data) )
             })
             .catch(error=> {
-                console.log(error)
+                // console.log(error)
+                dispatch( descargaProductosError() )
             }) 
     }
 }
@@ -65,4 +66,8 @@ export const obtenerProductosComienzo = () => ({
 export const descargaProductosExitosa = productos => ({
     type: DESCARGA_PRODUCTOS_EXITOSA,
     payload: productos
+})
+
+export const descargaProductosError = () => ({
+    type: DESCARGA_PRODUCTOS_ERROR,
 })
