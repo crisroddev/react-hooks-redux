@@ -113,9 +113,24 @@ export const eliminarProductoError = () => ({
 export function obtenerProductoEditarAction(id) {
     return (dispatch) => {
         dispatch( obtenerProductoAction());
+
+        // Obtener Producto de la API
+        clienteAxios.get(`/libros/${id}`)
+            .then(res => {
+                console.log(res.data);
+                obtenerProductoEditarExito(res.data)
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 }
 
 export const obtenerProductoAction = () => ({
     type: OBTENER_PRODUCTO_EDITAR,
+})
+
+export const obtenerProductoEditarExito = producto => ({
+    type: PRODUCTO_EDITAR_EXITO,
+    payload: producto
 })
