@@ -18,7 +18,7 @@ const Productos = () => {
     // Acceder al State
     const loading = useSelector(state => state.productos.loading);
     const error = useSelector(state => state.productos.error);
-
+    const productos = useSelector(state => state.productos.productos)
 
     return ( 
         <Fragment>
@@ -37,7 +37,11 @@ const Productos = () => {
                         </tr>   
                     </thead>
                     <tbody>
-
+                        {productos.productos.map(producto => (
+                            <Producto
+                                
+                            />
+                        ))}
                     </tbody>
                 </table>
                 { loading ? 'Cargando' : null}
