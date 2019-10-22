@@ -45,6 +45,15 @@ export const nuevoProductoError = (error) => ({
 export function obtenerProductosAction(){
     return (dispatch) => {
         dispatch( obtenerProductosComienzo() )
+
+        // Consultar API
+        clienteAxios.get('libros')
+            .then(res => {
+                console.log(res)
+            })
+            .catch(error=> {
+                console.log(error)
+            }) 
     }
 }
 
