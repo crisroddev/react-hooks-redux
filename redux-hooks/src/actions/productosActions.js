@@ -8,9 +8,15 @@ import {
 export function crearNuevoProductoAction(producto){
     return (dispatch) => {
         dispatch( nuevoProducto() )
+        dispatch( nuevoProductoExito(producto) )
     }
 }
 
 export const nuevoProducto = () => ({
     type: AGREGAR_PRODUCTO
-})
+});
+
+export const nuevoProductoExito = (producto) => ({
+    type: AGREGAR_PRODUCTO_EXITO,
+    payload: producto
+});
