@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+// Redux
+import{ useDispatch } from 'react-redux';
+import { obtenerProductoEditarAction } from '../actions/productosActions'
 
 const EditarProducto = () => {
+
+    // Dispatch para ejecutar accion principal
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch( obtenerProductoEditarAction() )
+    }, [])
+
     return ( 
         <div className="row justify-content-center mt-5">
         <div className="col-md-8">
