@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 // Redux
 import{ useDispatch, useSelector } from 'react-redux';
-import { obtenerProductoEditarAction } from '../actions/productosActions'
+import { obtenerProductoEditarAction, editarProductoAction } from '../actions/productosActions'
 
 const EditarProducto = ({ match }) => {
 
