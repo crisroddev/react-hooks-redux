@@ -7,7 +7,10 @@ import {
     DESCARGA_PRODUCTOS_ERROR,
     OBTENER_PRODUCTO_ELIMINAR,
     PRODUCTO_ELIMINADO_EXITO,
-    PRODUCTO_ELIMINADO_ERROR
+    PRODUCTO_ELIMINADO_ERROR,
+    OBTENER_PRODUCTO_EDITAR,
+    PRODUCTO_EDITAR_EXITO,
+    PRODUCTO_EDITAR_ERROR
 } from '../types';
 
 // Cada Reducer Tiene su State
@@ -66,6 +69,22 @@ export default function(state = initialState, action){
                 productos: state.productos.filter( producto => producto.id !== action.payload )
             }
         case PRODUCTO_ELIMINADO_ERROR:
+            return {
+                ...state,
+                error: true
+            }
+        case OBTENER_PRODUCTO_EDITAR:
+            return {
+                ...state,
+                error: null
+            }
+        case PRODUCTO_EDITAR_EXITO:
+            return {
+                ...state,
+                error: null,
+                producto: action.payload
+            }
+        case PRODUCTO_EDITAR_ERROR:
             return {
                 ...state,
                 error: true
