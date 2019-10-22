@@ -18,6 +18,7 @@ const EditarProducto = ({ match }) => {
 
     // Acceder al State
     const producto = useSelector(state => state.productos.producto);
+    const error = useSelector(state => state.productos.error);
 
     // Cuand Carga la API
     if(!producto) return 'Cargando'
@@ -50,7 +51,7 @@ const EditarProducto = ({ match }) => {
 
                         <button type="submit" className="btn btn-primary font-weight-bold text-uppercase d-block w-100">Guardar Cambios</button>
                     </form>
-
+                    { error ? <div className="font-weight-bold alert alert alert-danger text-center mt-4">Hubo un Error</div> : null}
                 </div>
             </div>
         </div>

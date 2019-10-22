@@ -122,6 +122,7 @@ export function obtenerProductoEditarAction(id) {
             })
             .catch(error => {
                 console.log(error);
+                dispatch(obtenerProductoEditarError() )
             })
     }
 }
@@ -133,4 +134,8 @@ export const obtenerProductoAction = () => ({
 export const obtenerProductoEditarExito = producto => ({
     type: PRODUCTO_EDITAR_EXITO,
     payload: producto
+})
+
+export const obtenerProductoEditarError = () => ({
+    type: PRODUCTO_EDITAR_ERROR
 })
