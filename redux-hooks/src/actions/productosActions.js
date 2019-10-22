@@ -19,7 +19,7 @@ export function crearNuevoProductoAction(producto){
             })
             .catch(error => {
                 console.log(error)
-                dispatch( nuevoProductoError(true) )
+                dispatch( nuevoProductoError() )
             })
         
     }
@@ -35,6 +35,5 @@ export const nuevoProductoExito = (producto) => ({
 });
 
 export const nuevoProductoError = (error) => ({
-    type: AGREGAR_PRODUCTO_ERROR,
-    payload: error
+    type: AGREGAR_PRODUCTO_ERROR
 });
