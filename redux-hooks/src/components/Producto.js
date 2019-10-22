@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 // Redux
 import { borrarProductoAction } from '../actions/productosActions';
@@ -9,7 +10,29 @@ const Producto = ({producto}) => {
 
     const dispatch = useDispatch();
     const confirmarEliminarProducto = id => {
-        console.log(id)
+
+        // Preguntar Usuario si Quiere Eliminar
+        Swal.fire({
+            title: 'Estás seguro que quieres Eliminar?',
+            text: "Un Producto Eliminado no se puede recuperar",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminar!',
+            cancelButtonText: 'Cancelar'
+
+          }).then((result) => {
+            if (result.value) {
+              Swal.fire(
+                'Eliminado!',
+                'Producto Eliminado',
+                'success'
+              )
+
+              dispatch( borrarProductoAction() )
+            }
+          })
     }
 
     return ( 
