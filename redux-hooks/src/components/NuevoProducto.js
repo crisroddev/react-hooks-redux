@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // Redux
 import { crearNuevoProductoAction } from '../actions/productosActions';
 import { validarFormularioAction, validacionError, validacionExito } from '../actions/validacionActions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const NuevoProducto = () => {
 
@@ -17,6 +17,9 @@ const NuevoProducto = () => {
     const validarFormulario = () => dispatch(validarFormularioAction() ); 
     const exitoValidacion = () => dispatch(validacionExito() );
     const errorValidacion = () => dispatch(validacionError() );
+
+    // Obtener Datos del State
+    const error = useSelector((state) => state.error.error)
 
     // Submit
     const handleSubmit = e => {
@@ -72,6 +75,7 @@ const NuevoProducto = () => {
 
                             <button type="submit" className="btn btn-primary font-weight-bold text-uppercase d-block w-100">Agregar</button>
                         </form>
+                        { error ? <div className="font-weight-bold alert alert alert-danger text-center mt-4">Todos los campos son requeridos</div> : null}
         
                     </div>
                 </div>
