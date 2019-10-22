@@ -76,7 +76,7 @@ export const descargaProductosError = () => ({
 })
 
 // Funcion Que Elimina Producto
-export function eliminarProductoAction(id){
+export function borrarProductoAction(id){
     return (dispatch) => {
         dispatch( obtenerProductoEliminar() )
     }
