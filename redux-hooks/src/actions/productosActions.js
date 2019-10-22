@@ -19,7 +19,7 @@ export function crearNuevoProductoAction(producto){
             })
             .catch(error => {
                 console.log(error)
-                dispatch( nuevoProductoError(error) )
+                dispatch( nuevoProductoError(true) )
             })
         
     }
