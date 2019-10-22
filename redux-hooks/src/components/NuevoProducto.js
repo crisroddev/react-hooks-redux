@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 
 // Redux
 import { crearNuevoProductoAction } from '../actions/productosActions';
 import { validarFormularioAction, validacionError, validacionExito } from '../actions/validacionActions';
 import { useDispatch, useSelector } from 'react-redux';
 
-const NuevoProducto = () => {
+const NuevoProducto = ({history}) => {
 
     // State
     const [ nombre, setNombre ] = useState('');
@@ -31,18 +32,18 @@ const NuevoProducto = () => {
             errorValidacion();
             return;
         }
+
+        // Si pasa la Validacion
         exitoValidacion();
 
-        // Al Pasar Validacion
+        // Crear Producto
         agregarProducto({
             nombre,
             precio
         });
 
-
-        // Crear Producto
-
         // Redireccionar
+        history.push('/')
     }
 
     return ( 
@@ -84,4 +85,4 @@ const NuevoProducto = () => {
      );
 }
  
-export default NuevoProducto;
+export default withRouter(NuevoProducto);
