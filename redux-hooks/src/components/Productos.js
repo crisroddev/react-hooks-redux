@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
+import Producto from './Producto';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -37,9 +38,10 @@ const Productos = () => {
                         </tr>   
                     </thead>
                     <tbody>
-                        {productos.productos.map(producto => (
+                        {productos.map(producto => (
                             <Producto
-                                
+                                key={producto.id}
+                                producto={producto}
                             />
                         ))}
                     </tbody>
