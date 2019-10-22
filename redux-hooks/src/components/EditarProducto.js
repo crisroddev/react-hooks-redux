@@ -12,6 +12,7 @@ const EditarProducto = ({ match }) => {
 
     // Dispatch para ejecutar accion principal
     const dispatch = useDispatch();
+    const editarProducto = (producto) => dispatch(editarProductoAction(producto) );
 
     // Obtener el Id a Editar
     const { id } = match.params;
@@ -30,10 +31,12 @@ const EditarProducto = ({ match }) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        console.log(nombreRef.current.value)
-        console.log(precioRef.current.value)
+        // console.log(nombreRef.current.value)
+        // console.log(precioRef.current.value)
 
         // Validar Form
+
+        editarProducto()
 
         // No hay Error
 
