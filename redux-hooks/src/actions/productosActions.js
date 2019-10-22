@@ -118,7 +118,7 @@ export function obtenerProductoEditarAction(id) {
         clienteAxios.get(`/libros/${id}`)
             .then(res => {
                 console.log(res.data);
-                obtenerProductoEditarExito(res.data)
+                dispatch(obtenerProductoEditarExito(res.data) )
             })
             .catch(error => {
                 console.log(error);

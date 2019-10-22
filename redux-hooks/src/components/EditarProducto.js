@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 // Redux
-import{ useDispatch } from 'react-redux';
+import{ useDispatch, useSelector } from 'react-redux';
 import { obtenerProductoEditarAction } from '../actions/productosActions'
 
 const EditarProducto = ({ match }) => {
@@ -16,6 +16,12 @@ const EditarProducto = ({ match }) => {
         dispatch( obtenerProductoEditarAction(id) )
     }, [dispatch, id])
 
+    // Acceder al State
+    const producto = useSelector(state => state.productos.producto);
+
+    // Cuand Carga la API
+    if(!producto) return 'Cargando'
+
     return ( 
         <div className="row justify-content-center mt-5">
         <div className="col-md-8">
@@ -29,6 +35,7 @@ const EditarProducto = ({ match }) => {
                                 type="text" 
                                 className="form-control" 
                                 placeholder="Titulo"
+                                defaultValue={producto.nombre}
                             />
                         </div>
                         <div className="form-group">
@@ -37,6 +44,7 @@ const EditarProducto = ({ match }) => {
                                 type="text" 
                                 className="form-control" 
                                 placeholder="Precio" 
+                                defaultValue={producto.precio}
                             />
                         </div>
 
