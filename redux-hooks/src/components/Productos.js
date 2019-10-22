@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 
 // Redux
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { obtenerProductosAction } from '../actions/productosActions';
 
 const Productos = () => {
@@ -14,6 +14,9 @@ const Productos = () => {
         const cargarProductos = () => dispatch( obtenerProductosAction() );
         cargarProductos();
     }, []);
+
+    // Acceder al State
+    const loading = useSelector(state => state.productos.loading)
 
 
     return ( 
@@ -32,6 +35,7 @@ const Productos = () => {
 
                 </tbody>
             </table>
+            { loading ? 'Cargando' : null}
         </Fragment>
      );
 }
