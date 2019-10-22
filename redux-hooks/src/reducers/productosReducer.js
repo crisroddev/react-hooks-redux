@@ -17,7 +17,8 @@ import {
 const initialState = {
     productos: [],
     error: null,
-    loading: false
+    loading: false,
+    producto: {}
 }
 
 export default function(state = initialState, action){
@@ -41,7 +42,8 @@ export default function(state = initialState, action){
         case COMENZAR_DESCARGA_PRODUCTOS:
             return {
                 ...state,
-                loading: true
+                loading: true,
+                producto: {}
             }
         case DESCARGA_PRODUCTOS_EXITOSA:
             return {
