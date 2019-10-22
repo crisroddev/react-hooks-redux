@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 // Redux
 import{ useDispatch, useSelector } from 'react-redux';
 import { obtenerProductoEditarAction, editarProductoAction } from '../actions/productosActions'
 
 const EditarProducto = ({ match }) => {
+
+    // Crear los refs
+    const nombreRef = useRef('');
+    const precioRef = useRef('');
 
     // Dispatch para ejecutar accion principal
     const dispatch = useDispatch();
@@ -23,13 +27,29 @@ const EditarProducto = ({ match }) => {
     // Cuand Carga la API
     if(!producto) return 'Cargando'
 
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        console.log(nombreRef.current.value)
+        console.log(precioRef.current.value)
+
+        // Validar Form
+
+        // No hay Error
+
+        // Guardar los cambios
+
+        // Redireccionar
+    }
+
     return ( 
         <div className="row justify-content-center mt-5">
         <div className="col-md-8">
             <div className="card">
                 <div className="card-body">
                     <h2 className="text-center">Editar Producto</h2>
-                    <form>
+                    <form
+                        onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label>Titulo</label>
                             <input 
@@ -37,6 +57,7 @@ const EditarProducto = ({ match }) => {
                                 className="form-control" 
                                 placeholder="Titulo"
                                 defaultValue={producto.nombre}
+                                ref={nombreRef}
                             />
                         </div>
                         <div className="form-group">
@@ -46,6 +67,7 @@ const EditarProducto = ({ match }) => {
                                 className="form-control" 
                                 placeholder="Precio" 
                                 defaultValue={producto.precio}
+                                ref={precioRef}
                             />
                         </div>
 
