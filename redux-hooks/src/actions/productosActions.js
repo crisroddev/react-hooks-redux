@@ -79,9 +79,29 @@ export const descargaProductosError = () => ({
 export function borrarProductoAction(id){
     return (dispatch) => {
         dispatch( obtenerProductoEliminar() )
+
+        // Eliminar en la API
+        clienteAxios.delete(`/libros/${id}`)
+            .then(res => {
+                console.log(res)
+                dispatch( eliminarProductoExito(id) )
+            })
+            .catch(error => {
+                console.log(error)
+                dispatch( eliminarProductoError() )
+            })
     }
 }
 
 export const obtenerProductoEliminar = () => ({
     type: OBTENER_PRODUCTO_ELIMINAR
+})
+
+export const eliminarProductoExito = id => ({
+    type: PRODUCTO_ELIMINADO_EXITO,
+    payload: id
+})
+
+export const eliminarProductoError = () => ({
+    type: PRODUCTO_ELIMINADO_ERROR,
 })
