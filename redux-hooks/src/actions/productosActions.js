@@ -144,9 +144,9 @@ export const obtenerProductoEditarError = () => ({
 })
 
 // Modifica un Producto
-export function editarProductoAction(producto){
+export function editarProductoAction(producto) {
     return (dispatch) => {
-        dispatch( comenzarEdicionProducto() )
+        dispatch( comenzarEdicionProducto());
     }
 }
 

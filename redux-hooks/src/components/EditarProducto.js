@@ -36,7 +36,7 @@ const EditarProducto = ({ match }) => {
 
         // Validar Form
 
-        editarProducto()
+        editarProducto();
 
         // No hay Error
 
