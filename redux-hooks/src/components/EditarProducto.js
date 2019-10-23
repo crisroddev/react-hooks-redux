@@ -3,8 +3,9 @@ import React, { useEffect, useRef } from 'react';
 // Redux
 import{ useDispatch, useSelector } from 'react-redux';
 import { obtenerProductoEditarAction, editarProductoAction } from '../actions/productosActions'
+import { validarFormularioAction, validacionError, validacionExito } from '../actions/validacionActions';
 
-const EditarProducto = ({ match }) => {
+const EditarProducto = ({ match, history }) => {
 
     // Crear los refs
     const nombreRef = useRef('');
@@ -13,6 +14,9 @@ const EditarProducto = ({ match }) => {
     // Dispatch para ejecutar accion principal
     const dispatch = useDispatch();
     const editarProducto = (producto) => dispatch(editarProductoAction(producto) );
+    const validarFormulario = () => dispatch(validarFormularioAction() ); 
+    const exitoValidacion = () => dispatch(validacionExito() );
+    const errorValidacion = () => dispatch(validacionError() );
 
     // Obtener el Id a Editar
     const { id } = match.params;
@@ -34,18 +38,25 @@ const EditarProducto = ({ match }) => {
         // console.log(precioRef.current.value)
 
         // Validar Form
+        validarFormulario();
 
+        if(nombreRef.current.value.trim()  === '' || precioRef.current.value.trim() === ''){
+            errorValidacion();
+            return;
+        }
+
+        // No hay Error
+        exitoValidacion();
+
+        // Guardar los cambios
         editarProducto({
             id,
             nombre: nombreRef.current.value,
             precio: precioRef.current.value,
         });
 
-        // No hay Error
-
-        // Guardar los cambios
-
         // Redireccionar
+        history.push('/');
     }
 
     return ( 
