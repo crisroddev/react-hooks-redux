@@ -36,7 +36,11 @@ const EditarProducto = ({ match }) => {
 
         // Validar Form
 
-        editarProducto();
+        editarProducto({
+            id,
+            nombre: nombreRef.current.value,
+            precio: precioRef.current.value,
+        });
 
         // No hay Error
 

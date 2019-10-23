@@ -147,9 +147,24 @@ export const obtenerProductoEditarError = () => ({
 export function editarProductoAction(producto) {
     return (dispatch) => {
         dispatch( comenzarEdicionProducto());
+
+        // Consultar API
+        clienteAxios.put(`/libros/${producto.id}`, producto)
+            .then(res => {
+                console.log(res)
+                dispatch( editarProductoExito(producto))
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 }
 
 export const comenzarEdicionProducto = () => ({
     type: COMENZAR_EDICION_PRODUCTO
+})
+
+export const editarProductoExito = (producto) => ({
+    type: PRODUCTO_EDITADO_EXITO,
+    payload: producto
 })
