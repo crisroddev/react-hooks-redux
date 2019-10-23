@@ -30,7 +30,6 @@ const EditarProducto = ({ match }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-
         // console.log(nombreRef.current.value)
         // console.log(precioRef.current.value)
 
